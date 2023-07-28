@@ -1,0 +1,34 @@
+site_name: Xuc's Docs
+theme:
+  name: material
+  logo: assets/icon.png
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+extra:
+  alternate:
+    - name: English
+      link: /en/
+      lang: en
+    - name: 简体中文
+      link: /zh/
+      lang: zh
+    - name: 正體中文（台灣）
+      link: /zh-TW/
+      lang: zh-TW
+nav:
+  - Home: index.en.md
+  - About:
+      - About Me: about.en.md
+      - About This Site: about-site.en.md
+plugins:
+  - search:
+  - i18n:
+      default_language: en
+      languages:
+        en: english
+        zh: 简体中文
+        zh-TW: 正體中文（台灣）
