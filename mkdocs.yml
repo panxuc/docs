@@ -2,6 +2,7 @@ site_name: Xuc's Docs
 theme:
   name: material
   logo: assets/icon.png
+  favicon: assets/images/favicon.png
   features:
     - navigation.instant
     - navigation.tabs
@@ -11,13 +12,13 @@ theme:
 extra:
   alternate:
     - name: English
-      link: /en/
+      link: ./en/
       lang: en
     - name: 简体中文
-      link: /zh/
+      link: ./zh/
       lang: zh
     - name: 正體中文（台灣）
-      link: /zh-TW/
+      link: ./zh-TW/
       lang: zh-TW
 nav:
   - Home: index.en.md
