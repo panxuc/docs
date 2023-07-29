@@ -1,0 +1,56 @@
+{#-
+This file was automatically generated - do not edit
+-#}
+{% extends "main.html" %}
+{% block tabs %}
+{{ super() }}
+<style>
+	.md-header {
+		position: initial
+	}
+
+	.md-main__inner {
+		margin: 0
+	}
+
+	.md-content {
+		display: none
+	}
+
+	@media screen and (min-width:60em) {
+		.md-sidebar--secondary {
+			display: none
+		}
+	}
+
+	@media screen and (min-width:76.25em) {
+		.md-sidebar--primary {
+			display: none
+		}
+	}
+</style>
+<section class="mdx-container">
+	<div class="md-grid md-typeset">
+		<div class="mdx-hero">
+			<div class="mdx-hero__image">
+				<img src="assets/images/illustration.png" alt="" width="500" height="600" draggable="false">
+			</div>
+			<div class="mdx-hero__content">
+				<h1>請看清華大學電子工程系一個愚蠢的大二學生寫的文檔。</h1>
+				<p>也許這只是浪費時間？</p>
+				<a href="{{ 'zh-TW/projects/' | url }}" title="Xuc 的專案" class="md-button">
+					專案
+				</a>
+				<a href="{{ 'zh-TW/notes/' | url }}" title="Xuc 的筆記" class="md-button">
+					筆記
+				</a>
+				<a href="{{ 'zh-TW/about/' | url }}" title="關於 Xuc 和他的文檔" class="md-button">
+					關於
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
+{% block content %}{% endblock %}
+{% block footer %}{% endblock %}

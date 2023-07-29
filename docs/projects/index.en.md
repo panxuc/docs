@@ -1,29 +1,29 @@
-# Projects by Xuc
+# Xuc's Projects
 
-During his studies at the Department of Electronic Engineering at Tsinghua University, Xuc Pan completed some homework.
+Xuc Pan completed some projects while studying in the Department of Electronic Engineering at Tsinghua University.
 
----
+## Coursework
 
-## Computer Program Design (1)
+### Computer Program Design (1)
 
-### Rock-Paper-Scissors
+- Rock-Paper-Scissors [:fontawesome-brands-github:](https://github.com/Panxuc/ComputerProgramDesign-Homework/tree/main/1/ex)
 
-[:fontawesome-brands-github:](https://github.com/Panxuc/ComputerProgramDesign-Homework/tree/main/1/ex)
+### Computer Program Design (2)
 
-Written in C.
+- Wuziqi / Gomoku / Omok [:fontawesome-brands-github:]()
+- System of Student Grade Management [:fontawesome-brands-github:]()
 
----
+## Beyond Courses
 
-## Computer Program Design (2)
+### EESAST Software Department
 
-### Backgammon
+- THUAI6 (努力少女戏尔危) [:fontawesome-brands-github:](https://github.com/Panxuc/THUAI6_team)
+- Summer Training 2023 [:fontawesome-brands-github:](https://github.com/Panxuc/EESAST-hw2023) [:fontawesome-brands-chrome:](https://panxuc.github.io/EESAST- hw2023/)
+     - Calculator [:fontawesome-brands-github:](https://github.com/Panxuc/EESAST-hw2023-MAUI-calculator) [:fontawesome-brands-windows:]() [:fontawesome-brands-android: ]()
+     - System of Student Grade Management [:fontawesome-brands-github:](https://github.com/Panxuc/EESAST-hw2023/tree/main/08) [:fontawesome-brands-chrome:](https://panxuc.github.io/EESAST-hw2023/08/index.html)
+     - Flag of France (not the pure white one) [:fontawesome-brands-github:](https://github.com/Panxuc/EESAST-hw2023/tree/main/09) [:fontawesome-brands-chrome:](https://panxuc.github.io/EESAST-hw2023/09/france.html)
 
-[:fontawesome-brands-github:]()
+### EESAST Hardware Department
 
-Written in C++.
-
-### System of Student Grade Management
-
-[:fontawesome-brands-github:]()
-
-Written in C++.
+- Summer Training 2023
+- Hardware Design Contest

@@ -1,10 +1,4 @@
 ---
-hide:
-  - footer
+template: home.en.html
+title: Home
 ---
-
-# Xuc's Docs
-
----
-
-Under Construction

@@ -1,0 +1,56 @@
+{#-
+This file was automatically generated - do not edit
+-#}
+{% extends "main.html" %}
+{% block tabs %}
+{{ super() }}
+<style>
+	.md-header {
+		position: initial
+	}
+
+	.md-main__inner {
+		margin: 0
+	}
+
+	.md-content {
+		display: none
+	}
+
+	@media screen and (min-width:60em) {
+		.md-sidebar--secondary {
+			display: none
+		}
+	}
+
+	@media screen and (min-width:76.25em) {
+		.md-sidebar--primary {
+			display: none
+		}
+	}
+</style>
+<section class="mdx-container">
+	<div class="md-grid md-typeset">
+		<div class="mdx-hero">
+			<div class="mdx-hero__image">
+				<img src="assets/images/illustration.png" alt="" width="500" height="600" draggable="false">
+			</div>
+			<div class="mdx-hero__content">
+				<h1>请看清华大学电子工程系一个愚蠢的大二学生写的文档。</h1>
+				<p>也许这只是浪费时间？</p>
+				<a href="{{ 'zh/projects/' | url }}" title="Xuc 的项目" class="md-button">
+					项目
+				</a>
+				<a href="{{ 'zh/notes/' | url }}" title="Xuc 的笔记" class="md-button">
+					笔记
+				</a>
+				<a href="{{ 'zh/about/' | url }}" title="关于 Xuc 和他的文档" class="md-button">
+					关于
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
+{% block content %}{% endblock %}
+{% block footer %}{% endblock %}

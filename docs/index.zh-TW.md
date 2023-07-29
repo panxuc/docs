@@ -1,10 +1,4 @@
 ---
-hide:
-  - footer
+template: home.zh-TW.html
+title: 主頁
 ---
-
-# Xuc 的文檔
-
----
-
-建設中

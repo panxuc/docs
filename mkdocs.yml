@@ -9,6 +9,7 @@ theme:
   favicon: assets/images/favicon.png
   icon:
     repo: fontawesome/brands/github
+  custom_dir: overrides/.overrides
   features:
     - announce.dismiss
     # - content.action.edit
@@ -67,9 +68,29 @@ nav:
   - Home: index.en.md
   - Projects:
       - projects/index.en.md
+      - Coursework:
+          - Rock-Paper-Scissors: projects/rockpaperscissors.en.md
+          - Wuziqi / Gomoku / Omok: projects/wuziqi.en.md
+          - System of Student Grade Management: projects/stugrade.en.md
+      - Beyond Course:
+          - THUAI6 (努力少女戏尔危): projects/thuai6.en.md
+          - Calculator: projects/calculator.en.md
+          - System of Student Grade Management: projects/stugrade1.en.md
+          - Flag of France (not the pure white one): projects/france.en.md
+  - Notes:
+      - notes/index.en.md
+      - OS & Software:
+          - Windows 11: notes/windows11.en.md
+          - ArchLinux: notes/archlinux.en.md
+      - Life in Tsinghua:
+          - Social Media: notes/socialmedia.en.md
+          - Utilities: notes/utilities.en.md
+          - Network: notes/network.en.md
+          - Courses: notes/courses.en.md
   - About:
       - About Xuc Pan: about/about.en.md
       - About Xuc's Docs: about/about-site.en.md
+      - License: about/license.md
 plugins:
   - search:
       lang:
