@@ -1,14 +1,44 @@
 site_name: Xuc's Docs
+site_author: Xuc Pan
+copyright: Copyright &copy; 2023 Xuc Pan
+repo_url: https://github.com/Panxuc/docs
+repo_name: Panxuc/docs
 theme:
   name: material
   logo: assets/icon.png
   favicon: assets/images/favicon.png
+  icon:
+    repo: fontawesome/brands/github
   features:
+    - announce.dismiss
+    # - content.action.edit
+    # - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    - navigation.footer
+    - navigation.indexes
     - navigation.instant
-    - navigation.tabs
     - navigation.sections
-    - navigation.expand
+    - navigation.tabs
     - navigation.top
+    - navigation.tracking
+    - toc.follow
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to Dark Mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to Light Mode
 extra:
   alternate:
     - name: English
@@ -20,16 +50,72 @@ extra:
     - name: 正體中文（台灣）
       link: ./zh-TW/
       lang: zh-TW
+  social:
+    - icon: fontawesome/brands/facebook
+      link: https://www.facebook.com/panxuc/
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/XucPan
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/panxuc/
+    - icon: fontawesome/brands/bilibili
+      link: https://space.bilibili.com/33071481
+    - icon: fontawesome/brands/github
+      link: https://panxuc.github.io/
+    - icon: fontawesome/brands/steam
+      link: https://steamcommunity.com/id/panxuc/
 nav:
   - Home: index.en.md
+  - Projects:
+      - projects/index.en.md
   - About:
-      - About Me: about.en.md
-      - About This Site: about-site.en.md
+      - About Xuc Pan: about/about.en.md
+      - About Xuc's Docs: about/about-site.en.md
 plugins:
   - search:
+      lang:
+        - en
+        - zh
+        - zh-TW
   - i18n:
       default_language: en
       languages:
         en: english
         zh: 简体中文
         zh-TW: 正體中文（台灣）
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: Panxuc
+      repo: docs
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde

@@ -1,4 +1,9 @@
-### Xuc's Docs
+---
+hide:
+  - footer
+---
+
+# Xuc's Docs
 
 ---
 

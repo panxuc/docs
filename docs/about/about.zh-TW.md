@@ -1,4 +1,4 @@
-### 關於 Xuc Pan
+# 關於 Xuc Pan
 
 ---
 
