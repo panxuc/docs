@@ -1,0 +1,56 @@
+{#-
+This file was automatically generated - do not edit
+-#}
+{% extends "main.html" %}
+{% block tabs %}
+{{ super() }}
+<style>
+	.md-header {
+		position: initial
+	}
+
+	.md-main__inner {
+		margin: 0
+	}
+
+	.md-content {
+		display: none
+	}
+
+	@media screen and (min-width:60em) {
+		.md-sidebar--secondary {
+			display: none
+		}
+	}
+
+	@media screen and (min-width:76.25em) {
+		.md-sidebar--primary {
+			display: none
+		}
+	}
+</style>
+<section class="mdx-container">
+	<div class="md-grid md-typeset">
+		<div class="mdx-hero">
+			<div class="mdx-hero__image">
+				<img src="assets/images/illustration.png" alt="" width="500" height="600" draggable="false">
+			</div>
+			<div class="mdx-hero__content">
+				<h1>清華大学電子工学科のバカな二年生が書いたドキュメントを見てください。</h1>
+				<p>時間の無駄でしょうか?</p>
+				<a href="{{ 'zh/projects/' | url }}" title="Xuc のプロジェクト" class="md-button">
+					プロジェクト
+				</a>
+				<a href="{{ 'zh/notes/' | url }}" title="Xuc のノート" class="md-button">
+					ノート
+				</a>
+				<a href="{{ 'zh/about/' | url }}" title="Xuc と彼のドキュメント" class="md-button">
+					について
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock %}
+{% block content %}{% endblock %}
+{% block footer %}{% endblock %}

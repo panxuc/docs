@@ -1,12 +1,12 @@
 # Xuc's Notes
 
-## :computer: OS & Software
+## 💻 OS & Software
 
 ### :simple-windows11: Windows 11
 
 ### :simple-archlinux: ArchLinux
 
-## :school: Life in Tsinghua
+## 🏫 Life in Tsinghua
 
 ### :fontawesome-brands-weixin: Social Media
 

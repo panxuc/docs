@@ -1,12 +1,12 @@
 # Xuc 的笔记
 
-## :computer: 操作系统与软件
+## 💻 操作系统与软件
 
 ### :simple-windows11: Windows 11
 
 ### :simple-archlinux: ArchLinux
 
-## :school: 清华生活
+## 🏫 清华生活
 
 ### :fontawesome-brands-weixin: 社交媒体
 

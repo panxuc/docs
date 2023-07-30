@@ -3,6 +3,7 @@ site_author: Xuc Pan
 copyright: Copyright &copy; 2023 Xuc Pan
 repo_url: https://github.com/Panxuc/docs
 repo_name: Panxuc/docs
+edit_uri: edit/main/docs/
 theme:
   name: material
   logo: assets/icon.png
@@ -12,21 +13,22 @@ theme:
   custom_dir: overrides/.overrides
   features:
     - announce.dismiss
-    # - content.action.edit
-    # - content.action.view
+    - content.action.edit
+    - content.action.view
     - content.code.annotate
     - content.code.copy
-    # - content.tabs.link
+    - content.tabs.link
     - content.tooltips
     # - header.autohide
     - navigation.footer
-    - navigation.indexes
+    # - navigation.indexes
     - navigation.instant
-    - navigation.sections
+    # - navigation.sections
     - navigation.tabs
     - navigation.top
     - navigation.tracking
     - toc.follow
+    - toc.integrate
   palette:
     - scheme: default
       primary: indigo
@@ -51,6 +53,9 @@ extra:
     - name: 正體中文（台灣）
       link: ./zh-TW/
       lang: zh-TW
+    - name: 日本語
+      link: ./ja/
+      lang: ja
   social:
     - icon: fontawesome/brands/facebook
       link: https://www.facebook.com/panxuc/
@@ -65,44 +70,44 @@ extra:
     - icon: fontawesome/brands/steam
       link: https://steamcommunity.com/id/panxuc/
 nav:
-  - Home: index.en.md
+  - Home: index.zh.md
   - Projects:
-      - projects/index.en.md
+      - projects/index.zh.md
       - Coursework:
-          - Rock-Paper-Scissors: projects/rockpaperscissors.en.md
-          - Wuziqi / Gomoku / Omok: projects/wuziqi.en.md
-          - System of Student Grade Management: projects/stugrade.en.md
+          - projects/cpd1.zh.md
+          - projects/cpd2.zh.md
       - Beyond Course:
-          - THUAI6 (努力少女戏尔危): projects/thuai6.en.md
-          - Calculator: projects/calculator.en.md
-          - System of Student Grade Management: projects/stugrade1.en.md
-          - Flag of France (not the pure white one): projects/france.en.md
+          - projects/eesastsd.zh.md
+          - projects/eesasthd.zh.md
   - Notes:
-      - notes/index.en.md
+      - notes/index.zh.md
       - OS & Software:
-          - Windows 11: notes/windows11.en.md
-          - ArchLinux: notes/archlinux.en.md
+          - notes/windows11.zh.md
+          - notes/archlinux.zh.md
       - Life in Tsinghua:
-          - Social Media: notes/socialmedia.en.md
-          - Utilities: notes/utilities.en.md
-          - Network: notes/network.en.md
-          - Courses: notes/courses.en.md
+          - notes/socialmedia.zh.md
+          - notes/utilities.zh.md
+          - notes/network.zh.md
+          - notes/courses.zh.md
   - About:
-      - About Xuc Pan: about/about.en.md
-      - About Xuc's Docs: about/about-site.en.md
-      - License: about/license.md
+      - about/index.zh.md
+      - about/about.zh.md
+      - about/about-site.zh.md
+      - about/license.md
 plugins:
   - search:
       lang:
         - en
         - zh
         - zh-TW
+        - ja
   - i18n:
-      default_language: en
+      default_language: zh
       languages:
         en: english
         zh: 简体中文
         zh-TW: 正體中文（台灣）
+        ja: 日本語
 markdown_extensions:
   - abbr
   - admonition
@@ -140,3 +145,7 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
