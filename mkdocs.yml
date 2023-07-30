@@ -47,10 +47,10 @@ extra:
     - name: English
       link: ./en/
       lang: en
-    - name: 简体中文
+    - name: 中文（简体）
       link: ./zh/
       lang: zh
-    - name: 正體中文（台灣）
+    - name: 中文（繁體）
       link: ./zh-TW/
       lang: zh-TW
     - name: 日本語
@@ -105,8 +105,8 @@ plugins:
       default_language: zh
       languages:
         en: english
-        zh: 简体中文
-        zh-TW: 正體中文（台灣）
+        zh: 中文（简体）
+        zh-TW: 中文（繁體）
         ja: 日本語
 markdown_extensions:
   - abbr
@@ -128,6 +128,8 @@ markdown_extensions:
       emoji_index: !!python/name:materialx.emoji.twemoji
   - pymdownx.highlight:
       anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.magiclink:
       repo_url_shorthand: true
@@ -135,6 +137,7 @@ markdown_extensions:
       repo: docs
   - pymdownx.mark
   - pymdownx.smartsymbols
+  - pymdownx.snippets
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
