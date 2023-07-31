@@ -301,4 +301,4 @@ archinstall
 
 `arch-linux-gui` 的安装与 [:simple-manjaro: Manjaro](https://manjaro.org/) 类似。
 
-## 使用
+## 使用 Arch Linux

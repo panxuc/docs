@@ -81,14 +81,18 @@ nav:
           - projects/eesasthd.zh.md
   - Notes:
       - notes/index.zh.md
-      - OS & Software:
-          - notes/windows11.zh.md
-          - notes/archlinux.zh.md
       - Life in Tsinghua:
           - notes/socialmedia.zh.md
           - notes/utilities.zh.md
           - notes/network.zh.md
           - notes/courses.zh.md
+      - OS & Software:
+          - notes/windows11.zh.md
+          - notes/archlinux.zh.md
+      - Games:
+          - notes/games.zh.md
+          - Galgames:
+              - notes/galgames/yuzusoft.zh.md
   - About:
       - about/index.zh.md
       - about/about.zh.md
