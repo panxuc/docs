@@ -10,7 +10,7 @@ theme:
   favicon: assets/images/favicon.png
   icon:
     repo: fontawesome/brands/github
-  custom_dir: overrides/.overrides
+  custom_dir: overrides
   features:
     - announce.dismiss
     - content.action.edit
