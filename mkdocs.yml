@@ -21,14 +21,14 @@ theme:
     - content.tooltips
     # - header.autohide
     - navigation.footer
-    # - navigation.indexes
+    - navigation.indexes
     - navigation.instant
     # - navigation.sections
     - navigation.tabs
     - navigation.top
     - navigation.tracking
     - toc.follow
-    - toc.integrate
+    # - toc.integrate
   palette:
     - scheme: default
       primary: indigo
@@ -74,29 +74,34 @@ nav:
   - Projects:
       - projects/index.zh.md
       - Coursework:
-          - projects/cpd1.zh.md
-          - projects/cpd2.zh.md
+          - projects/coursework/index.zh.md
+          - projects/coursework/cpd1.zh.md
+          - projects/coursework/cpd2.zh.md
       - Beyond Course:
-          - projects/eesastsd.zh.md
-          - projects/eesasthd.zh.md
+          - projects/beyondcourse/index.zh.md
+          - projects/beyondcourse/eesastsd.zh.md
+          - projects/beyondcourse/eesasthd.zh.md
   - Notes:
       - notes/index.zh.md
       - Life in Tsinghua:
-          - notes/socialmedia.zh.md
-          - notes/utilities.zh.md
-          - notes/network.zh.md
-          - notes/courses.zh.md
+          - notes/tsinghua/index.zh.md
+          - notes/tsinghua/socialmedia.zh.md
+          - notes/tsinghua/utilities.zh.md
+          - notes/tsinghua/network.zh.md
+          - notes/tsinghua/courses.zh.md
       - OS & Software:
-          - notes/windows11.zh.md
-          - notes/archlinux.zh.md
+          - notes/os/index.zh.md
+          - notes/os/windows11.zh.md
+          - notes/os/archlinux.zh.md
       - Games:
-          - notes/games.zh.md
+          - notes/games/index.zh.md
+          - notes/games/aceattorney.zh.md
+          - notes/games/touhou.zh.md
           - Galgames:
-              - notes/galgames/yuzusoft.zh.md
+              - notes/games/galgames/index.zh.md
+              - notes/games/galgames/yuzusoft.zh.md
   - About:
       - about/index.zh.md
-      - about/about.zh.md
-      - about/about-site.zh.md
       - about/license.md
 plugins:
   - search:
