@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # YUZU SOFT
 
 > 本文部分内容引自[萌娘百科](https://zh.moegirl.org.cn)，文字内容默认使用《知识共享 署名-非商业性使用-相同方式共享 3.0 中国大陆》协议。

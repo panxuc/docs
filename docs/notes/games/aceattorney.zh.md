@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # 逆转裁判
 
 > 本文部分内容引自[逆转裁判中文百科](https://aceattorney.huijiwiki.com/)与[电玩巴士](https://www.tgbus.com/)。
