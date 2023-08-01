@@ -89,6 +89,7 @@ nav:
           - notes/tsinghua/utilities.zh.md
           - notes/tsinghua/network.zh.md
           - notes/tsinghua/courses.zh.md
+          - notes/tsinghua/locations.zh.md
       - OS & Software:
           - notes/os/index.zh.md
           - notes/os/windows11.zh.md
@@ -110,6 +111,7 @@ plugins:
         - zh
         - zh-TW
         - ja
+      jieba_dict: dict.txt
   - i18n:
       default_language: zh
       languages:

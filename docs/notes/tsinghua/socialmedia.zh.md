@@ -50,6 +50,7 @@ comments: true
 
 - 清华大学电子工程系 `TsinghuaDEE`
     - 无限之声 `EETsinghua`
+        - EECG `gh_3d3e30003162`
 
 ### 其他服务账号与娱乐账号
 
