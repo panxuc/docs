@@ -9,6 +9,7 @@
 - [💻 OS & Software](os/)
     - [:simple-windows11: Windows 11](os/windows11/)
     - [:simple-archlinux: ArchLinux](os/archlinux/)
+    - [:fontawesome-brands-android: Android](os/android/)
 - [🎮 Games & Entertainment](games/)
     - [Ace Attorney](games/aceattorney/)
     - [Touhou Project](games/touhou/)

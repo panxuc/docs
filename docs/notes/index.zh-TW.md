@@ -9,6 +9,7 @@
 - [💻 作業系統與軟體](os/)
     - [:simple-windows11: Windows 11](os/windows11/)
     - [:simple-archlinux: ArchLinux](os/archlinux/)
+    - [:fontawesome-brands-android: Android](os/android/)
 - [🎮 遊戲與娛樂](games/)
     - [逆轉裁判](games/aceattorney/)
     - [東方 Project](games/touhou/)
