@@ -120,6 +120,7 @@ plugins:
         zh: 中文（简体）
         zh-TW: 中文（繁體）
         ja: 日本語
+  - mkdocs-video
 markdown_extensions:
   - abbr
   - admonition
