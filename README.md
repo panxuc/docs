@@ -1,9 +1,9 @@
-### Is the Order Xuc?
+# 主页
 
----
+## 请看清华大学电子工程系一个愚蠢的大二学生写的文档。
 
-- 😄 Born in [Yangzhou](http://www.yangzhou.gov.cn/), [Jiangsu Province](http://www.jiangsu.gov.cn/), [P.R.China](https://www.gov.cn/)
-- 🤓 Undergraduate of [Department of Electronic Engineering](https://www.ee.tsinghua.edu.cn/), [Tsinghua University](https://www.tsinghua.edu.cn/)
-- 🤪 Too young, too simple, sometimes naïve
-- 😋 Enjoy ACGN but not [_Genshin Impact_](https://genshin.hoyoverse.com/) player
-- 🥵 Otaku that cannot save the world
+也许这只是浪费时间？
+
+[项目](docs/projects/)
+[笔记](docs/notes/)
+[关于](docs/about/)

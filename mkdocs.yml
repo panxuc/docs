@@ -104,7 +104,7 @@ nav:
               - notes/games/galgames/yuzusoft.zh.md
   - About:
       - about/index.zh.md
-      - about/license.md
+      - about/license.zh.md
 plugins:
   - search:
       lang:
