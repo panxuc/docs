@@ -1,5 +1,7 @@
 # About Xuc Pan
 
+![metrics](https://cdn.jsdelivr.net/gh/Panxuc/Panxuc@latest/github-metrics.svg)
+
 ---
 
 - 😄 Born in [Yangzhou](http://www.yangzhou.gov.cn/), [Jiangsu Province](http://www.jiangsu.gov.cn/), [P.R.China](https://www.gov.cn/)

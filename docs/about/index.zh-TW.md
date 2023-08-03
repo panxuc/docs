@@ -1,5 +1,7 @@
 # 關於 Xuc Pan
 
+![metrics](https://cdn.jsdelivr.net/gh/Panxuc/Panxuc@latest/github-metrics.svg)
+
 ---
 
 - 😄 出生於[中華人民共和國](https://www.gov.cn/)[江蘇省](http://www.jiangsu.gov.cn/)[揚州市](http://www.yangzhou.gov.cn/)
