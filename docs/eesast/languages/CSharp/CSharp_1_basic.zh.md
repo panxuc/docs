@@ -1,0 +1,1759 @@
+---
+title: C# 程序设计基础
+---
+
+## 写在前面的话
+
+### 先修知识
+
+阅读本文档要求有 C 语言的基础，并初步了解面向对象的基本知识，掌握至少一门支持面向对象的语言（例如 C++、Java 等）。
+
+### 本文档的定位
+
+本文档是 C# 入门级文档，主要讲解 C# 的基本语法，旨在让有一定编程基础并转型 .NET 开发的程序员快速入门 C#。
+
+## .NET 概述
+
+### 什么是 .NET
+
+.NET 是微软公司发布的应用程序框架，用以减轻软件开发人员的工作。它包括一系列类库、运行时等内容。
+
+在生成一个 .NET 程序时，程序员编写的代码暂时不翻译成本地的机器语言，而是先翻译成一种其他的语言，叫做“微软中间语言（MSIL, Microsoft Intermediate Language）”。在执行该微软中间语言的可执行文件时，将启动对应 .NET 框架的“公共语言运行时（CLR, Common Language Runtime）”，由该 CLR 将 MSIL 编译为机器码执行，称作 **JIT 编译** （just-in-time compilation）。
+
+可见，CLR 就仿佛一台独立于物理机器的“虚拟机”，MSIL 语言的程序可以在 CLR 上运行。由于这个机制，我们可以得到很多便利，例如可以轻松实现垃圾回收（GC, Garbage Collection）、跨平台（虽然微软起初并没有这个目的），等等。
+
+### 形形色色的 .NET
+
+起初，微软推出的框架名字叫“.NET Framework”，只能在 Windows 上运行以推广 Windows，现在 .NET Framework 也是 Windows 10 的预装品。.NET Framework 可以支持多种开发框架，例如 Winform、ASP、WPF，等等。后来，微软改变了策略，拥抱开源与跨平台，推出了“.NET Core”框架，该框架开源，并且支持多种操作系统，并且随着 .NET Core 版本的更迭，.NET Framework 支持的功能也逐渐向 .NET Core 迁移。当 .NET Core 3.1 出现后，功能已经接近完备，接近甚至超过了 .NET Framework，微软决定下个版本扔掉 Core，下个版本直接改名“.NET”，与 .NET 同名以表明它将是以后 .NET 的主要发展方向。况且考虑到 .NET Framework 最新版本已经是 4.x，因此为了防止发生混淆，.NET 版本跨过 4.x，而直接于 2020 年下半年推出 .NET 5，并在之后每年推出一个 .NET 版本。对于 .NET 来说，偶数版本的 .NET（.NET 6、.NET 8、……）为长期支持的 LTS 版本（Long Term Support），支持期限为三年；奇数版本的 .NET（.NET 5、.NET 7、……）为标准支持的 STS 版本（Standard Term Support），支持期限为 18 个月。
+
+此外，在 .NET Core 出现之前，开源社区（非微软官方）自己创造了一个支持 C# 语言的跨平台运行时，称作“mono”。为了便于管理如此繁杂的 .NET 体系，微软推出了 .NET Standard 规范，作为各个 .NET 运行时遵循的准则。不管是 .NET Framework，还是 .NET Core，还是 mono，都必须实现 .NET Standard 作为其公共子集。
+
+.NET 现在可以支持多种语言或被多种语言进行调用，例如 C#、Visual Basic.NET、F#、PowerShell、C++/CLI，等等。
+
+本文将主要介绍 C# 语言的基本语法。
+
+## C# 概览
+
+### 创建一个 C# 程序
+
+基于 .NET Core 的 C# 程序可以通过命令行创建，在安装了 .NET Core SDK 后，可以在命令行中输入：
+
+```cmd
+dotnet new console --output hello
+```
+
+来创建一个 .NET Core 控制台应用程序，此外，通过下面的命令可以查看当前可以创建的项目类型：
+
+```cmd
+dotnet new --list
+```
+
+输入下面的命令可以运行该控制台程序：
+
+```cmd
+dotnet run --project hello
+```
+
+程序输出：
+
+```
+Hello World!
+```
+
+如果是在 Windows 上开发，我们可以使用“宇宙第一 IDE” Visual Studio 来完成上述过程，而无须使用命令行。
+
+### 第一个 C# 程序
+
+#### `Main` 方法
+
+打开 Program.cs，我们看到：
+
+```c#
+using System;
+
+namespace hello
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
+    }
+}
+```
+
+这样一个 C# 程序的第一行 `using System;` 是在包含 `System` 命名空间，`System` 是很多 .NET 类库所在的命名空间。包含该命名空间，可以使用该命名空间的内容。其中，`Console` 是 `System` 命名空间的一个类，因此该语句应为 `System.Console.WriteLine("Hello World!");`。由于我们用了 `using System;` ，因此可省去 `System.`。
+
+`hello` 是我们自定义的命名空间，`Program` 是一个类，而 `Main` 是该类的一个静态方法（关于类和静态方法的概念我们将会在后面提到），称为“`Main` 方法”。一般来说，一个应用程序以 `Main` 方法作为入口点，且一个程序通习惯上只有一个类定义一个 `Main` 方法作为程序入口点（如果有多个类具有 `Main` 方法需要在项目配置中手动指定入口点）。`Main` 方法的形式通常有以下几种：
+
+```c#
+public static void Main() { }
+public static int Main() { }
+public static void Main(string[] args) { }
+public static int Main(string[] args) { }
+public static async Task Main() { }
+public static async Task<int> Main() { }
+public static async Task Main(string[] args) { }
+public static async Task<int> Main(string[] args) { }
+```
+
+一般来说，习惯上 `Main` 方法都被定义在 `Program` 类中。
+
+#### 顶级语句（C# 9.0）
+
+在 C# 9.0（.NET 5.0）中，应用程序也可以没有 `Main` 方法，但是需要有且仅有一个文件具有“顶级语句（Top-level statements）”。所谓顶级语句就是在所有的命名空间定义之前的语句。若程序无 `Main` 方法，则以顶级语句作为入口点：
+
+```c#
+using System;
+Console.WriteLine("Hello World!");
+```
+
+上面的程序也可以输出“Hello World!”。
+
+在顶级语句中，可以直接使用 `args` 关键字获取命令行参数：
+
+```c#
+foreach (var arg in args)
+{
+    Console.WriteLine(arg);
+}
+```
+
+### C# 类型系统
+
+C# 是一种面向对象的强类型语言，具有一个庞大的类型系统。C# 类型系统的特点是，一切类型（除指针类型）均继承自 `object`（`System.Object`）类，即 `object` 类型是一切类型（除指针类型）的基类。
+
+C# 的类型分为两种：值类型和引用类型（以及指针类型）。
+
+#### 值类型
+
+值类型是一类比较简单的类型，直接在内存栈上或其他内存位置储存数值。值类型分为两种：结构类型和枚举类型。
+
+##### 内置数值类型
+
+内置的数值类型均属于结构类型，C# 内置的数值类型有：
+
+| C# 类型名称 |                          范围                          | 对应的 .NET 类型 |              备注               |
+| :---------: | :----------------------------------------------------: | :--------------: | :-----------------------------: |
+|   `sbyte`   |                       -128 ~ 127                       |  `System.SByte`  |         8 位有符号整数          |
+|   `byte`    |                        0 ~ 255                         |  `System.Byte`   |         8 位无符号整数          |
+|   `short`   |                    -32,768 ~ 32,767                    |  `System.Int16`  |         16 位有符号整数         |
+|  `ushort`   |                       0 ~ 65535                        | `System.UInt16`  |         16 位无符号整数         |
+|    `int`    |             -2,147,483,648 ~ 2,147,483,647             |  `System.Int32`  |         32 位有符号整数         |
+|   `uint`    |                   0 ~ 4,294,967,295                    | `System.UInt32`  |         32 位无符号整数         |
+|   `long`    | -9,223,372,036,854,775,808 ~ 9,223,372,036,854,775,807 |  `System.Int64`  |         64 位有符号整数         |
+|   `ulong`   |             0 ~ 18,446,744,073,709,551,615             | `System.UInt64`  |         64 位无符号整数         |
+|   `nint`    |                       取决于平台                       | `System.IntPtr`  |      32 或 64 位有符号整数      |
+|   `nuint`   |                       取决于平台                       | `System.UIntPtr` |      32 或 64 位无符号整数      |
+|   `float`   |                           —                            | `System.Single`  |      IEEE754 单精度浮点数       |
+|  `double`   |                           —                            | `System.Double`  |      IEEE754 双精度浮点数       |
+|  `decimal`  |                 ±1.0E-28 ~ ±7.9228E28                  | `System.Decimal` |          16 个字节小数          |
+|   `bool`    |                      true, false                       | `System.Boolean` |        布尔类型，1 字节         |
+|   `char`    |                    U+0000 ~ U+FFFF                     |  `System.Char`   | Unicode UTF-16 字符类型；2 字节 |
+
+内置的数字类型有对应的文本类型，例如整数 `2021`、`2021_0714UL`，双精度浮点数 `3.1415926`，单精度浮点数 `3.56f`、`3.14F`、小数 `3.50m`、`3.75M`、字符型 `'c'`，等等。
+
+此外在整数文本的前面加上前缀可以指定进制：十六进制为 `0x` 或 `0X`，二进制（C# 7.0）`0b` 或 `0B`。
+
+##### 自定义结构类型
+
+结构类型也可以自定义：
+
+```c#
+public struct Point
+{
+    public int x;
+    public int y;
+}
+```
+
+`struct` 前的`public` 是访问权限修饰符，表示该结构类型可以任意被访问，此外还有 `private`（只有它所在的类可以被访问）、`internal` （仅限本程序集内部访问），等等。非嵌套类型的默认级别是 `internal`。具体将在后面进行详解。
+
+##### 枚举类型
+
+枚举类型是一种不同于结构类型的值类型。需要用 `enum` 关键字进行定义。具体将在后面进行详解。
+
+```c#
+public enum Color
+{
+    Red = 0,
+    Blue = 1,
+    Yello = 2,
+    Purple = 8,
+    Black // Equivalent to "Black = 9", 8 + 1 by default.
+}
+```
+
+##### 值类型变量的定义
+
+定义一个结构类型变量有两种方式，一是直接使用“类型名+变量名”的方式，二是使用 `new` 关键字，两者完全等价。
+
+```c#
+int x;                      // Equivalent to "int x = 0;" or "int x = default(int);"
+int y = new int();          // Equivalent to "int y;"
+int z = 4;
+Point pt1;
+Point pt2 = new Point();    // Equivalent to "Point pt2;"
+```
+
+如果值类型变量具有构造方法，可以用 `new` 关键字。
+
+```c#
+public struct Point
+{
+    public int x;
+    public int y;
+    public Point(int x_, int y_)
+    {
+        x = x_;
+        y = y_;
+    }
+}
+```
+
+```c#
+Point pt = new Point(2, 3);
+```
+
+##### 关于值类型
+
+`System.ValueType` 类（该类派生自 `object` 类）是所有值类型的直接或间接基类，其中结构类型（`int`、自定义结构类型，等等）都直接派生自 `System.ValueType` 类，而枚举类型则直接派生自`System.Enum` 类（该类派生自 `System.ValueType` 类）。且值类型不可被继承。
+
+#### 引用类型
+
+引用类型与值类型不同。引用类型分两部分，一个是部分是存储真正数据的部分，是开辟在“托管堆”上的，另一个是指向该数据块的“引用”，是在内存栈或其他任何位置的。我们创建引用类型的对象时，需要通过 `new` 关键字来在内存堆上开辟数据空间（不过又时可以省略）。例如字符串类型（`string`）就是一个引用类型：
+
+```c#
+string s1 = new string("Hello, world");     // s1 是一个引用，指向一个 string 对象，该对象为 "Hello, world".
+string s2 = "Hello, world";                 // string s2 = new string("Hello, world"); 的简略写法
+string s3;                                  // 仅仅定义了一个 string 引用，并没有指向任何 string 对象！
+```
+
+没有指向任何对象的引用的值是默认值 `null`，即上述代码等价于 `string s3 = null;`。
+
+引用类型有很多，例如内置的引用类型 `object`、`string`、`dynamic`，数组类型、类类型（`class`）、委托类型（`delegate`）、接口类型（`interface`）、记录类型（`record`，C# 9.0）
+
+##### `object` 初探
+
+`object` 是一个 C# 关键字，表示 .NET 类型 `System.Object` 类，即是一个类类型，它是所有类型（除指针类型）的公共基类。而它是个引用类型，这也意味着 `object` 的引用可以指向所有类型的托管对象（关于托管的概念在后文中会有提到）。
+
+###### 装箱和拆箱
+
+我们知道，值类型是没有引用的。那么，一个 `object` 引用是如何指向值类型的呢？这个机制就叫“装箱（Boxing）”和“取消装箱（Unboxing）”（也叫“拆箱”）。
+
+当我们把一个值类型强制转换为 `object` 类型时，会在托管堆上 `new` 出一个 `object` 对象，用来存储这个值类型，这样就把值类型转换成了 `object` 类型。这个过程叫做“装箱” 。
+
+当我们想把装箱产生的 `object` 类型转换回该值类型的时候，存储在托管堆上的数据就会被拿出来，这个过程叫做“拆箱”。
+
+这样，通过装箱和拆箱，我们就实现了让每一个值类型都可以被转换为 `object` 类型。这种统一的类型系统为我们编程带来了巨大的便利。
+
+但是，频繁的装箱和拆箱也会有较大的性能损失，所以尽量避免大量的装箱与拆箱操作。
+
+##### `string` 初探
+
+`string` 是一个 C# 关键字，表示 .NET 类型 `System.String` 类，即是一个类类型。
+
+###### 字符串文本
+
+字符串文本采用双引号 `""` 引起来，其中 `\` 是转义字符，一些字符需要用 `\` 实现。例如 `\n` 为换行符、`\t` 为制表符，`\\` 为字符 `'\'` 本身、`\"` 是双引号，例如：
+
+```c#
+Console.WriteLine("I said, \"I am happy.\"");
+```
+
+将会输出：
+
+```
+I said, "I am happy."
+```
+
+如果不想使用转义字符，那么可以使用 C# 的逐字文本。逐字文本以 `@` 开头，并用双引号引起。逐字文本中 `\` 不再被解释为转义字符，而且逐字文本中可以含有换行。唯一的例外是逐字文本中的双引号 `"` 需要使用两个连续的双引号 `""` 来表示。
+
+此外 C# 还支持字符串内插（C# 6.0），可以在字符串中插入变量。内插字符串以 `$` 开头，用双引号引起。插入到字符串中的变量放在一对花括号 `{}` 中（C# 11 开始，表示内插的花括号内可以换行，这有利于在内插中使用模式匹配等），而内插字符串中的花括号 `{` 和 `}` 需要分别使用两个连续的花括号 `{{` 和 `}}` 来表示。
+
+```c#
+Console.WriteLine(@"D:\new\input.txt");
+Console.WriteLine(@"#include <stdio.h>
+int main(void)
+{
+    return 0;
+}");
+int x = 4;
+int y = 5;
+Console.WriteLine($"The position is ({x}, {y}).");
+```
+
+程序输出：
+
+```
+D:\new\input.txt
+#include <stdio.h>
+int main(void)
+{
+    return 0;
+}
+The position is (4, 5).
+```
+
+C# 也支持逐字内插字符串，以 `$@` 开头，即可以将逐字文本和内插字符串的用法结合起来。
+
+C# 11（.NET 7）开始支持原始字符串文本，以 `"""` 开始并以 `"""` 结束，允许多行字符串，若为多行字符串则以单独的一行 `"""` 结束，且字符串的缩进以 `"""` 的起始位置为基准。原始字符串文本不进行任何转义操作，但允许字符串内插（开头的 `$` 数量代表需要内插的花括号数）：
+
+```c#
+var x = 1;
+var y = 2;
+var code1 = """int i = 0;""";
+var code2 = $"""int x = {x};""";
+var code3 = $$"""
+    #include <stdio.h>
+    int main(void) {
+        const char *s = "{y} = {{y}}";  // {y} = 2
+        return 0;
+    }
+    """;
+Console.WriteLine($"code1:\n{code1}\n");
+Console.WriteLine($"code2:\n{code2}\n");
+Console.WriteLine($"code3:\n{code3}\n");
+```
+
+#### 关于类型的几点说明
+
+##### 类型定义
+
+观察下面几个类型定义：
+
+```c#
+int x;
+int y = new int();
+string s1;
+string s2 = "";
+string s3 = new string("");
+```
+
+上面，`string` 是引用类型，因此必须使用 `new` 关键字在托管堆上开辟空间才真正创建了 `string` 对象（这个创建对象的过程通常称为“实例化”）。例如上面的 `s3`，即实例化了一个字符串对象，内容是空串，`s3` 是指向这个对象的引用；而对于 `s2`，编译器会在编译时自动补上 `new` 关键字，其含义和 `s3` 相同；
+
+而对于 `s1`，我们并没有使用 `new` 关键字创建 `string` 对象，因此我们仅仅定义了一个引用 `s1`，它不指向任何的对象，即它的值为 `null`。
+
+而对于值类型，例如 `int` 来说，虽然我们使用了 `new` 关键字来定义 `y`，但是并不会在托管堆上开辟一个内存空间，`y` 也不是引用，而是一个真正的 `int` 变量，与 `x` 完全相同。
+
+##### 自动推导类型
+
+使用 `var` 关键字可以让编译器自动推导变量类型：
+
+```c#
+var x = 4;              // x 是 int 类型
+var s = "Hello, world"; // s 是 string 类型的引用
+var o = new object();   //  o 是 object 类型的引用
+```
+
+##### 类型转换
+
+C# 默认可以将低精度类型隐式转换到高精度类型，而将高精度类型转换到低精度类型需要强制类型转换：
+
+```C#
+int x; ulong y;
+y = x;      // ok
+// x = y;   // error
+x = (int)y; // ok
+```
+
+##### 关于赋值
+
+值类型进行赋值是将该值类型的对象进行复制，而引用类型的复制是复制引用，而非对象本身。
+
+##### 变量定义
+
+C# 变量名只能包含数字、字母、下划线（汉字等文字也属于字母），并且不能以数字开头。也可以在变量名前加上 `@` 以强调它是变量名，但是一般情况下不加，例如 `int @val = 4;` 与 `int val = 4;` 完全等价。
+
+C# 包含一系列关键字（Keyword），例如 `int`、`double`、`if`、`while`，等等，如果要把变量名定义成关键字，则必须加上 `@`：
+
+```c#
+int @int; // 一个名字叫 int 的 int 型变量
+```
+
+##### 关于垃圾回收
+
+我们在托管堆上使用 `new` 实例化一个引用类型的对象后，不需要像一些底层语言一样将其 `delete` 掉，.NET 的垃圾回收（GC）机制会自动帮助我们完成这件事情。关于垃圾回收将会在后面详细讲述。
+
+## C# 入门
+
+### 输入输出
+
+#### 输出
+
+C# 的控制台输出需要使用 `System` 命名空间的 `Console` 类的 `Write`、`WriteLine` 方法。区别是 `WriteLine` 会在末尾加一个换行而 `Write` 不会。
+
+```C#
+System.Console.Write("Hello, ");
+System.Console.WriteLine("world!");
+```
+
+此外，可以进行格式输出，只需要在字符串中用 `{}` 括住参数的序号即可：
+
+```c#
+// using System;
+int x = 4, y = 5, z = 6;
+Console.WriteLine("z = {2}, x = {0}, y = {1}", x, y, z); // {n} 代表该处应换成第 n 个参数的值
+```
+
+输出：
+
+```
+z = 6, x = 4, y = 5
+```
+
+但是这种方法很少用了，更常用的是使用字符串内插：
+
+```c#
+// using System;
+int x = 4, y = 5, z = 6;
+Console.WriteLine($"z = {z}, x = {x}, y = {y}"); // {n} 代表该处应换成第 n 个参数的值
+```
+
+#### 输入
+
+C# 提供两种控制台输入：`System.Console.Read` 和 `System.Console.ReadLine`。其中 `System.Console.Read` 读取一个字符返回（返回值为 `int`）。而 `System.Console.ReadLine` 可以读入一行字符串。若要读入一个整数或浮点数，需要手动进行转换：
+
+```c#
+// using System;
+string s = Console.ReadLine();
+int x = Convert.ToInt32(Console.ReadLine());
+double d = Convert.ToDouble(Console.ReadLine());
+```
+
+### 运算与控制
+
+C# 的运算符：算术运算符、逻辑运算符、位运算符、三目运算符、null 合并运算符，等等。
+
+- `?` 常用于检查一个引用是否为 `null`，若不为 `null` 则对其进行访问：
+
+  ```c#
+  static public void Func(SomeType foo)
+  {
+      foo?.DoSomething(); // 如果 foo 不为 null，则调用 DoSomething 方法
+  }
+  ```
+
+- null 合并运算符：`??`。如果左边的表达式不为 `null`，则值为左边的值；若左边的表达式为 `null`，则值为右边的值
+
+  ```c#
+  static public void PrintString(string? s) // string? 目前可暂时当成 string 类型，后文将进行讲解
+  {
+      Console.WriteLine(s ?? "Null string");
+  }
+  ```
+
+  该方法实现功能：若 `s` 不是 `null`，则输出 `s`，否则输出 `"Null string"`。
+
+  此外还有 null 合并赋值运算符 `??=` （C# 8.0），若左边的值是 `null` ，则给它赋右边的值：
+
+  ```C#
+  static public void ConvertObject? o)
+  {
+      o ??= new object();
+  }
+  ```
+
+  该方法实现功能：若 `o` 为 `null`，则创建一个新的 `object` 对象赋给 `o`。
+
+C# 控制结构：
+
+- 条件分支：`if`、`switch`
+- 循环：`while`、`do...while`、`for`、`foreach`
+
+- 分支：`goto`
+
+特别说明：`switch` 语句中，如果 `case` 标签后有语句，则必须要写 `break`，除非 `case` 后没有任何语句。
+
+### 数组
+
+之前提到，C# 中，数组属于引用类型。数组均继承自 `System.Array` 类。
+
+#### 一维数组
+
+定义一个一维数组的最基本形式如下：
+
+```c#
+// type[] arr = new type[array_size];
+int[] arr1 = new int[5];                    // 定义一个长度为 5 的数组，每个元素初始值均为默认值 0
+int[] arr2 = new int[5] { 1, 2, 3, 4, 5 };  // 定义一个长度为 5 的数组，初始值分别为 1, 2, 3, 4, 5
+var arr3 = new int[] { 1, 2, 3, 4, 5 };     // 数组的长度可以由编译器自动推导
+int[] arr4 = { 1, 2, 3, 4, 5 };             // 简略写法
+```
+
+其中，各个数组的类型均为 `int[]`。可以通过 `[]` 访问其元素，`Length` 获取元素个数：
+
+```c#
+for (int i = 0; i < arr1.Length; ++i)
+{
+    Console.WriteLine(arr1[i]);
+}
+```
+
+也可以使用 `foreach` 语句遍历：
+
+```c#
+foreach (var i in arr1)
+{
+    Console.WriteLine(i);
+}
+```
+
+注：通过 `foreach` 是无法修改数组中的元素的，只能访问其值。
+
+#### 多维数组
+
+C# 可以定义多维的数组，以二维数组为例，二维数组的类型为 `int[,]`：
+
+```C#
+int[,] arr1 = new int[2, 3] { { 1, 2, 3 }, { 5, 4, 9 } };
+int[,] arr2 = { { 1, 2, 3 }, { 5, 4, 9 } };
+```
+
+通过 `Length` 获取数组的长度，通过 `GetLength(n)` 获取数组第 `n` 维的长度：
+
+```c#
+var arr = new int[,] { { 1, 2, 3 }, { 5, 4, 9 } };
+Console.WriteLine($"{arr.Length} {arr.GetLength(0)} {arr.GetLength(1)}");
+```
+
+输出：
+
+```
+6 2 3
+```
+
+#### 交错数组
+
+C# 支持嵌套的数组，即数组的每个元素都是一个数组。这样的数组称为“交错数组”。以一个每个元素都是一维数组的一维交错数组为例（其他维度的数组类似）：
+
+```c#
+int[][] arr = new int[2][]
+   {
+        new int[3]{ 1, 2, 3 },
+        new int[2]{ 4, 5 }
+   };
+```
+
+上述定义了一个具有两个元素的交错数组。
+
+需要注意的是，数组也是引用类型，因此交错数组的每个元素都要用 `new` 产生，例如下面的：
+
+```c#
+int[][] arr = new int[2][];
+```
+
+此处 `arr` 具有两个元素，每个元素都是一个 `int[]` 的引用。但是由于并没有用 `new` 为每个元素创建托管对象，因此每个引用都是 `null`，并没有指向任何数组。·
+
+## C# 初步
+
+### 类
+
+#### 定义一个类
+
+类类型属于“引用类型”，由 `class` 关键字定义。一个类的最基本定义方式如下：
+
+```c#
+class ClassName
+{
+    // 字段、属性、方法、索引器、终结器、析构元组，等等
+}
+```
+
+##### 类的命名规范
+
+类名习惯上采用大驼峰命名法
+
+##### 字段
+
+一个类可以含有它自己的“字段（field）”，一个“字段”即它内部含有的变量：
+
+```c#
+class Person
+{
+    private int age;
+    private string name;
+}
+```
+
+可以看到，这个 `Person` 类含有两个字段，一个是 `int` 类型的字段，一个是`string` 类型的引用作为字段。
+
+前面的 `private` 是[访问修饰符](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/access-modifiers)，它规定了这个字段的访问级别。
+
+`private` 可以换成：
+
+- `private`: 这个字段只能够被本类所访问
+- `public`：这个字段可以被随意访问
+- `protected`：这个字段可以被本类及其派生类访问
+- `internal`：这个字段可以在本程序集内随意访问
+- `protected internal`：既可以被本类及其派生类访问，又可以在本程序集内随意访问
+- `private protected`：可以被本类及其在 **本程序集** 内的派生类访问
+
+访问一个对象的字段需要用“对象的引用名.字段名”的方式访问。
+
+###### 字段的命名规范
+
+字段习惯上采用小驼峰命名法。
+
+###### 字段的默认值
+
+C# 的字段可以定义默认值：
+
+```c#
+class Foo
+{
+    private int bar = 233;
+}
+```
+
+若未指定默认值，则对于值类型默认值为 `0`，对于引用类型默认值为 `null`。
+
+###### 静态字段
+
+类可以含有静态字段，静态字段用 `static` 修饰。静态字段需要用“类名.字段名”的方式访问。
+
+```c#
+class Person
+{
+    public static int population;
+}
+```
+
+```c#
+Console.WriteLine(Person.population);
+```
+
+##### 方法
+
+###### 方法的定义
+
+类内可以含有方法（method）。方法的定义一般来说由访问权限、方法名、返回值、参数列表几部分组成。其中，“返回值、方法名、参数列表” 一般称为“方法的签名”。例如：
+
+```c#
+class Person
+{
+    private int age = 0;
+    private string name = "Tom";
+
+    public void Print(int n)
+    {
+        for (int i = 0; i < n; ++i)
+        {
+            Console.WriteLine($"age: {age}, name: {name}");
+        }
+    }
+}
+```
+
+该类具有 `Print` 方法。`public` 用来控制访问权限，与字段相同。
+
+###### 方法的命名规范
+
+方法习惯上采用大驼峰命名法。
+
+###### 方法的调用
+
+一个类的方法需要用“对象名.方法名”的方式调用，例如：
+
+```;
+var ps = new Person();
+ps.Print(2);
+```
+
+###### 静态方法
+
+类可以含有静态方法，静态方法是在方法前面加上 `static` 关键字：
+
+```c#
+class MathTool
+{
+    static public int Add(int x, int y)
+    {
+        return x + y;
+    }
+}
+```
+
+调用时需要用“类名.方法名”的方式调用：
+
+```c#
+Console.WriteLine(MathTool.Add(3, 5)); // 输出 8
+```
+
+###### 方法的参数传递方式
+
+方法的参数默认才用值传递，即将实参复制一份给形参。对于值类型来说，复制的是值类型的所有数据，对于引用类型来说，复制的是一个引用。
+
+```c#
+class Person
+{
+    public int age;
+}
+
+class Utility
+{
+    static public void Swap(Person x, Person y)
+    {
+        Person tmp = x;
+        x = y;
+        y = tmp;
+    }
+
+    static public void SwapAge(Person x, Person y)
+    {
+        int tmp = x.age;
+        x.age = y.age;
+        y.age = tmp;
+    }
+}
+```
+
+调用：
+
+```c#
+Person p = new Person(), q = new Person();
+p.age = 555; q.age = 666;
+Utility.Swap(p, q);
+Console.WriteLine($"{p.age} {q.age}"); // 555 666
+Utility.SwapAge(p, q);
+Console.WriteLine($"{p.age} {q.age}"); // 666 555
+```
+
+此外，参数可以改成按引用方式传递，需要加上关键字 `ref`。如果加上关键字 `ref`，则值类型的形参和实参指代的是同一个值类型对象，而引用类型的实参和形参指代的是同一个引用，例如上述代码改成：
+
+```C#
+static public void Swap(ref Person x, ref Person y)
+{
+    Person tmp = x;
+    x = y;
+    y = tmp;
+}
+```
+
+调用：
+
+```c#
+Person p = new Person(), q = new Person();
+p.age = 555; q.age = 666;
+Utility.Swap(ref p, ref q);  // 调用时也必须加 ref 关键字！
+Console.WriteLine($"{p.age} {q.age}"); // 666 555
+```
+
+###### 输出参数
+
+参数除了以 `ref` 方式传递外，有时我们需要用参数来返回值。这时虽然也可以用 `ref` 关键字来达到目的，但是最好使用 `out` 关键字，用法与 `ref` 完全相同。只不过使用 `out` 的时候编译器会进行编译器检查，是否真的给该参数赋了值，并且不能未经赋值便获取该参数的值。
+
+C# 7.2 及以上，可以给参数加上 `in` 关键字修饰以强调该参数是输入参数，并且不能给标记为 `in` 的参数赋值，即它是只读的。
+
+###### 参数的缺省值
+
+C# 具有参数缺省值：
+
+```c#
+class MathTool
+{
+    static public int Div(int x = 1, int y = 1)
+    {
+        return x / y;
+    }
+}
+```
+
+调用时，默认会把末尾未赋实参的参数赋以缺省值。但是也可以自行指定：
+
+```c#
+MathTool.Div(5);        // x = 5, y = 1
+Math.Div(y: 9);         // x = 1, y = 9
+Math.Div(y: 5, x: 4);   // x = 4, y = 5
+```
+
+###### 构造方法
+
+每个类可以定义构造方法。构造方法不具有返回值，且方法名与类名相同，是在一个对象被构造的时候调用的方法，由 `new` 表达式传递参数：
+
+```c#
+class Person
+{
+    private int age;
+    public Person(int age_)
+    {
+        age = age_;
+    }
+}
+```
+
+```c#
+Person ps = new Person(4);
+```
+
+###### 简化的函数体
+
+如果函数体非常简短，可以使用 `=>` 运算符：
+
+```c#
+class MathTool
+{
+    static public int Add(int x, int y) => x + y;
+}
+```
+
+###### 方法的重载
+
+一个类里可以定义多个同名方法，但是它们的参数列表必须不同。调用时根据传递的实参决定调用哪个重载方法。
+
+###### 运算符重载
+
+一些运算符可以进行重载，例如：`+`、`-`、`*`、`&`、`|`、`true`、`false`，等等。方法是将运算符（设为 `op`）其定义成方法 `operator op`。需要注意的是，运算符重载只能将运算符重载为 **静态方法** ，而不能是非静态方法，例如计算向量内积：
+
+```c#
+namespace Math
+{
+    public class Vector2
+    {
+        public double X { get; private set; }
+        public double Y { get; private set; }
+        public Vector2(double x, double y)
+        {
+            this.X = x;
+            this.Y = y;
+        }
+        public static double operator*(Vector2 v1, Vector2 v2)
+        {
+            return v1.X * v2.X + v1.Y * v2.Y;
+        }
+    }
+}
+```
+
+##### 属性
+
+属性（ **property** ）是 C# 的一个特色，它简化了许多代码的书写。属性本质上也是通过方法实现的。
+
+###### 属性的定义
+
+一个属性包含两个部分，一个是 `get` 访问器，一个是 `set` 访问器或 `init` 访问器（C# 9.0）。`get` 访问器用于外部读取字段的值，而 `set` 访问器用于外部设置字段的值。
+
+如下，`Age` 是一个属性，它用于设置和访问 `age` 字段的值。
+
+```c#
+class Person
+{
+    private int age;
+    public int Age
+    {
+        get { return age; } // 或 get => age;
+        private set { age = value >= 0 ? value : 0; }
+    }
+    public Person(int age_)
+    {
+        Age = age_;  // 调用 set 访问器
+    }
+    public void AddAge()
+    {
+        ++Age;  // 调用 set 和 get 访问器，等价于 Age = Age + 1;
+    }
+}
+```
+
+其中，`set` 被定义成是 `private` 的，而 `get` 没有显式写出，则默认与属性的访问权限相同，即 `public`。
+
+现在回顾数组的 `Length`，就是它的一个属性。
+
+###### 属性的命名规范
+
+习惯上，字段采用小驼峰命名法并为 `private`，而属性与它设置的字段同名并采用大驼峰命名法供外部访问。
+
+###### 自动实现属性
+
+有时，定义一个字段+一个属性太过繁琐，我们不希望再额外定义一个字段，并且也没有复杂的处理逻辑，这是我们就可以用自动实现属性：
+
+```c#
+class Complex
+{
+    public double Real { get; set; }
+    public double Imag { get; set; }
+}
+```
+
+这是编译器会为我们隐式生成两个字段，分别绑定到两个属性上。
+
+#### 类进阶特性
+
+##### `this` 引用
+
+在每个类的方法中，可以访问到指向本对象自身的引用，叫做 `this`。例子将在下面看到。
+
+##### 只读字段
+
+在字段前加上 `readonly` 修饰符代表该字段只能在构造方法里被赋值。一旦构造方法里被赋值后，便不能再修改它的值：
+
+```c#
+class WebPage
+{
+    private readonly string url;
+    public WebPage(string url)
+    {
+        this.url = url;                 // 形参 url 覆盖了字段 url，需要用 this 引用访问字段
+    }
+    private void Test()
+    {
+        // url = "http://www.4399.com"; // 编译错误！url 是只读的！
+    }
+}
+```
+
+##### `init` 访问器（C# 9.0）
+
+类似于只读字段，属性的也有类似的特性。在 C# 9.0（.NET 5.0）中加入了 `init` 访问器，将 `set` 改成 `init`，就可以达到该目的。例如：
+
+```c#
+class WebPage
+{
+    public string Url { get; private init; }
+    public WebPage(string url)
+    {
+        Url = url;                      // 形参 url 覆盖了字段 url，需要用 this 引用访问字段
+    }
+    private void Test()
+    {
+        // Url = "http://www.4399.com"; // 编译错误！
+    }
+}
+```
+
+##### 常量
+
+类可以定义常量，使用 `const` 关键字，定义时必须为其指定默认值。常量一旦定义，便不可被修改。
+
+###### 常量字段
+
+一个类可以定义常量字段。常量字段与静态字段一样，只能通过“类名.字段名”来访问。
+
+```c#
+class MathTool
+{
+    public const double PI = 3.1415926535897932384626;
+}
+```
+
+###### 局部常量
+
+方法内可以定义局部常量：
+
+```c#
+void Func()
+{
+    const string title = "EESAST";
+}
+```
+
+##### 类的访问权限控制与嵌套类
+
+类可以是嵌套类与非嵌套类。非嵌套类指的是直接在命名空间里定义的类，而嵌套类指的是在一个类里定义的类。
+
+```c#
+class Foo
+{
+    class Bar
+    {
+
+    }
+}
+```
+
+其中 `Bar` 就是一个嵌套类。
+
+类也有访问权限。[访问修饰符](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/keywords/access-modifiers)可以为：
+
+- `public` 该类可以任意访问
+- `private`：仅限嵌套类，只能被嵌套类 **所属的类** 访问
+- `protected`：仅限嵌套类，只能被嵌套类 **所属的类** 及其派生类进行访问
+- `internal`：可以在该程序集内进行任意访问
+- `protected internal`：仅限嵌套类，可以被该类所属的类及其派生类进行访问，并可以在程序集内任意访问
+- `private protected`（C# 7.2）：仅限嵌套类，可以被该类所属的类及其在 **本程序集** 内的派生类访问
+- `file`（C# 11）：文件本地类型，只能在本文件内访问
+
+例如：
+
+```c#
+public class WebPage
+{
+    private class Cache
+    {
+
+    }
+}
+```
+
+默认情况下，非嵌套类访问权限是 `internal`，而嵌套类访问权限是 `private`
+
+##### `partial` 类
+
+.NET 支持将类在一个程序集内分成很多块来定义，甚至放在多个文件里，这时是需要将每个部分的定义都加上 `partial` 关键字即可。
+
+### C# 对面向对象的支持
+
+#### 继承
+
+C# 继承的语法如下：
+
+```c#
+public class Base {}
+public class Derived : Base {}
+```
+
+`Derived` 类继承自基类 `Base`。如果一个类没有显式继承另一个类，那么它默认继承自 `object` 类。
+
+C# 不支持类的多继承，即一个类有且仅有一个基类（`object` 类除外）。
+
+在类里可以通过 `base` 关键字代表它的基类，同样构造方法也需要通过 `base` 关键字来为它的基类提供构造方法的参数。
+
+```c#
+class Animal
+{
+    private string name;
+    public Animal(string name)
+    {
+        this.name = name;
+    }
+}
+class Dog : Animal
+{
+    public Dog(string name) : base(name) {}
+}
+```
+
+##### 密封类
+
+密封类用 `sealed` 标识。密封类不可再被继承，即被声明为 `sealed` 的类不能再派生任何类，例如：
+
+```c#
+public sealed class Foo {}
+// public class Bar : Foo {} // 编译错误，Foo 不能再被继承
+```
+
+##### `is` 运算符
+
+.NET 支持在运行期进行类型检查。使用 `is` 运算符可以检查对象的类型，例如：
+
+```c#
+// 变量声明：
+// Animal ani = new Animal("");
+// Dog dog = new Dog("");
+// Animal ani2 = dog;  // 用 ani2 引用指向 dog 指向的对象
+// object o = 1;   // 将整数 1 装箱
+
+Console.WriteLine(ani is Animal);   // True，ani 是 Animal 类的对象
+Console.WriteLine(ani is Dog);      // False，ani 不是 Dog 类的对象
+Console.WriteLine(dog is Animal);   // True，Animal 是 Dog 类的基类
+Console.WriteLine(ani2 is Dog);     // True，ani2 指向的确实是 Dog 类的对象
+Console.WriteLine(o is int);        // True，拆箱
+```
+
+在 C# 9.0 中，还可以用 `is not` 判断改对象是否不是该类的对象。
+
+此外，`is` 运算符还可以检查是否为 `null`，或进行模式匹配（C# 7.0），等等。
+
+##### 隐藏基类方法
+
+如果派生类中定义了与基类同名且参数列表完全相同（不必返回值相同）的方法，则基类方法被隐藏起来。如果仍要调用基类的方法，需要使用 `base` 关键字。此时，派生类的方法需要使用 `new` 关键字进行说明。
+
+但是这种方法不符合面向对象的理念，因此使用情景较少,在这里仅使用一个简单的例子。
+
+```c#
+class Base
+{
+    public void Func() { Console.WriteLine("Base"); }
+}
+class Derived : Base
+{
+    public new void Func() { Console.Write("Derived"); base.Func(); }
+}
+```
+
+#### 多态：虚方法、抽象方法与抽象类
+
+“抽象类”是指不能使用 `new` 实例化出对象的类，抽象类在定义时在 `class` 前加上 `abstract` 关键字。
+
+C# 支持多态。虚方法的定义方式是在方法前加上 `virtual` 关键字，而抽象方法的定义方式是在方法前加上 `abstract` 关键字。区别是，虚方法必须为其定义函数体，而抽象方法不能定义函数体，且具有抽象方法的类必须是抽象类。
+
+派生类中定义与基类的虚方法或抽象方法签名完全相同的方法时，若在前面加上 `override` 关键字，则称为对基类虚方法或抽象方法的“覆盖”或“重写”。则之后再对派生类对象调用该方法时实际上是调用派生类重写的方法。
+
+```c#
+public abstract class Animal
+{
+    public abstract void Call();
+}
+
+public sealed class Dog : Animal
+{
+    public override void Call()
+    {
+        Console.WriteLine("Wang wang!");
+    }
+}
+```
+
+```c#
+Animal ani = new Dog();
+ani.Call();                     // 输出 Wang wang
+// Animal ani2 = new Animal();  // 编译错误，Animal 是抽象类
+```
+
+##### 虚属性与抽象属性
+
+由于属性的 `get` 与 `set` 访问器底层用方法实现，因此也可以将属性声明为 `abstract` 与 `virtual`。用法与虚方法和抽象方法完全相同。
+
+### 多态：接口
+
+C# 支持接口（interface），属于引用类型。接口的定义方式与类的定义方式相似，只不过需要使用关键字 `interface` 定义而不是 `class` 关键字定义。而且，接口中只允许含有方法和属性，而不允许含有字段。此外，接口也不允许被实例化，接口的方法和属性也 **并不是** 用虚函数表的方式实现的。
+
+继承一个接口通常称为“实现一个接口”。一个结构（struct）或一个类（class）可以实现多个接口，即接口允许多继承，实现一个接口的结构或类必须实现其所有方法与属性，例如：
+
+```c#
+public interface ICallable
+{
+    void Call();
+}
+
+public class Cat : ICallable
+{
+    void ICallable.Call()
+    {
+        Console.WriteLine("Meow");
+    }
+}
+```
+
+需要注意的是，接口内方法与属性的默认访问权限是 `public`，并且，类在实现接口内的方法时，需要与接口内定义的权限相同。
+
+接口还可以为其内的方法定义一个默认的实现（C# 8.0），派生类可以选择不显式实现接口的方法，而采用其默认实现。
+
+#### 接口定义属性
+
+接口还可以定义属性。但是，接口不会为属性提供默认实现，也不会定义自动实现属性，只能约束该属性至少具有的访问器。例如：
+
+```c#
+public interface INamable
+{
+    string Name { get; }
+}
+
+public class Cat : ICallable, INamable
+{
+    void ICallable.Call()
+    {
+        Console.WriteLine("Meow");
+    }
+
+    private string name;
+    public string Name
+    {
+        get => name;  // 实现接口中 Name 的 get 访问器
+        private set
+        {
+            name = value;
+        }
+    }
+}
+```
+
+#### 接口的命名规范
+
+接口一般采用大驼峰命名法，并以大写字母“I”开头。例如 .NET 库的 `IEnumable`、`ICollection`，等等
+
+### 泛型
+
+#### 泛型初探
+
+C# 支持泛型。可以创建泛型类、泛型方法、泛型接口、泛型委托、泛型记录（C# 9.0），等等。
+
+泛型类和泛型方法的定义方法很简单，只需要在类或方法名后使用尖括号 `<>` 括住泛型的名称即可：
+
+```c#
+class Point<T>
+{
+    public T X { get; private set; }
+    public T Y { get; private set; }
+    public Point(T x, T y)
+    {
+        this.X = x;
+        this.Y = y;
+    }
+}
+```
+
+```c#
+Point<int> pt = new Point(0, 0);
+```
+
+#### 泛型的约束
+
+C# 可以对泛型的性质进行约束。不满足约束性质的泛型参数会在编译期检查出来。
+
+泛型约束的办法是使用 `where` 关键字，例如：
+
+```c#
+class Point<T>
+    where T : struct
+{
+    public T X { get; private set; }
+    public T Y { get; private set; }
+    public Point(T x, T y)
+    {
+        this.X = x;
+        this.Y = y;
+    }
+}
+```
+
+其中，`where T : struct` 表示 `T` 必须是一个不可为 `null` 的值类型，否则会报错。此外，`struct` 还可换成（关于可为 `null` 和不可为 `null` 的类型将在之后说明）：
+
+- `struct`：不可为 `null` 的值类型（C# 8.0 及以上）；值类型（C# 8.0 以前）
+- `class`：不可为 `null` 的引用类型（C# 8.0 及以上）；引用类型（C# 8.0 以前）
+- `class?`：引用类型（C# 8.0 以上）
+- `new()`：具有无参构造方法
+- 一个类名或接口名：`T` 必须从该类继承或实现了该接口
+- ……
+
+泛型约束有很多，再此不一一列举。
+
+### 委托
+
+#### 定义、实例化并调用一个委托
+
+“委托”是一种引用类型，作用与函数指针类似。需要用 `delegate` 关键字定义一个委托类型。委托类型的定义格式与方法类似，只是在返回值类型前加上 `delegate` 关键字：
+
+```c#
+delegate int BinaryFunctor(int x, int y);
+```
+
+该段代码定义了一个委托类型，名字叫 `BinaryFunctor`。该委托可以接收参数为 `(int, int)`，返回类型为 `int` 的方法。
+
+与其他引用类型一样，我们需要用 `new` 关键字创建一个委托，并将一个方法赋给这个委托。
+
+```c#
+// int Add(int a, int b) => a + b;  // Add 方法的定义
+BinaryFunctor bf = new BinaryFunctor(Add);
+```
+
+然后我们便可以像调用方法一样调用这个委托所绑定的方法：
+
+```c#
+Console.WriteLine(bf(3, 5)); // 输出 8
+```
+
+#### 内置委托
+
+多数情况下，我们并不需要自定义委托类型，.NET 中已经定义好了一些内置的委托类型：
+
+- `Action` 是返回值为 `void` 类型的委托，泛型参数列表内为参数列表，例如 `Action` 为无参且返回值为 `void` 的委托、`Action<int>` 为参数是 `int` 且返回值为 `void` 的委托。`Action` 最多可以有 16 个参数类型。
+- `Func` 是既有参数又有返回值的委托。泛型参数列表中最后一个为返回值类型。例如 `Func<int, double>` 为参数是 `int`、返回值是 `double` 的委托。`Func` 最多可达 16 个参数类型和 1 个返回值类型。
+
+#### 多播委托
+
+一个委托不仅可以绑定一个方法，还可以绑定多个方法。这种委托我们称为“多播委托”。多播委托这个词的来源在于，最初微软设计的委托分为“单播委托”和“多播委托”，但是后来发现这种设计并没有什么用处，因此将两种委托合并成一种。但不幸的是当时已经设计出两种委托类了，因此多播委托类就一直传了下来。现在，所有的委托都是多播委托，不必再区分单播与多播委托。
+
+可以用 `+` 或 `+=` 来将新的方法附加到已有的委托上，例如：
+
+```c#
+// static public void Call1() => Console.WriteLine("Call1");
+// static public void Call2() => Console.WriteLine("Call2");
+// static public void Call3() => Console.WriteLine("Call3");
+
+var caller = new Action(Call1);
+caller += Call2;
+caller = caller + Call3;
+caller.Invoke(); // 等价于 caller();
+```
+
+同样也可以用 `-` 或 `-=` 来讲方法从委托中删除，例如 `caller -= Call1;`。但是这样，多播委托就存在不绑定任何一个方法的情况。在这种情况下，调用委托是非法的，我们可以使用 `caller?.Invoke();` 来达到这个目的。它会先判断委托是否绑定了方法，如果是再调用 `Invoke` 方法。
+
+### lambda 表达式
+
+lambda 表达式可以看成是一个匿名方法。语法很简单，例如一个求和的 lambda 表达式：
+
+```c#
+(x, y) => x + y;
+```
+
+可以看到，lambda 表达式的基本语法是：
+
+```
+(参数列表) => 函数体或返回值
+```
+
+如果函数体包含多条语句，可以用花括号括起来：
+
+```
+(参数列表) => { 函数体 }
+```
+
+特别地，如果只有一个参数，则括号可以省略：
+
+```c#
+o => o + 1;
+```
+
+lambda 表达式可以直接当作方法赋值给委托，例如：
+
+```c#
+var output = new Action
+(
+    () =>
+    {
+        Console.WriteLine("Hello, world!");
+    }  // 或 () => Console.WriteLine("Hello, world!");
+);
+var getAddOne = new Func<int, int>(x => x + 1);
+```
+
+从 C# 10（.NET 6.0）开始，lambda 表达式可以自动推导出 `Action` 或 `Func` 类型，也可以手动指定参数类型和返回值类型，因此上述代码可以用以下更简洁的方式写出：
+
+```c#
+var output = () =>
+{
+    Console.WriteLine("Hello, world!");
+};
+var getAddOne = (int x) => x + 1;
+```
+
+以及下面的代码：
+
+```c#
+var f = object (int x) => x + 1; // f 是 Func<int, object> 而非 Func<int, int>
+```
+
+### 事件
+
+C# 提供了“事件”模式。“事件”本身是基于多播委托实现的，同时功能上和委托也有相似之处。
+
+观察下面的代码：
+
+```c#
+class Logger
+{
+    public event EventHandler onWarning;
+
+    public void Warn()
+    {
+        onWarning?.Invoke(this, null);
+    }
+}
+```
+
+`System.EventHandler` 是一个委托类型：
+
+```c#
+delegate void EventHandler(object sender, System.EventArgs e);
+```
+
+我们在 `Logger` 类中定义了一个共有的事件：`onWarning`，`onWarning` 本身的类型是委托类型 `EventHandler`，也支持委托的一切操作。但是与委托作为共有字段参数不同的是，在类外部对 `onWarning` 做的操作只有 `+=` 和 `-=`，即讲方法绑定到多播委托上或从多播委托中删除方法，这两个操作称作对事件的“订阅（subscribing）”和“取消订阅（unsubscribing）” 。
+
+而类内对事件做的操作一般是检查该事件是否有订阅的方法并一次调用这些方法，即 `?.Invoke()`。
+
+用于事件的委托的返回值习惯上讲都是 `void`，而第一个参数习惯上都是 `object`（或 `object?`），对于第二个参数，需要是 `EventArgs` 类或它的派生类，但是 .NET Core 不再有这样的限制，即第二个参数可以是任何类型而不必派生自 `EventArgs`。
+
+显然，第一个参数常用于传递引发事件的对象，因此通常传递 `this` 引用，而第二个参数则通常传递事件发生需要传递的参数。例如下面的例子：
+
+```c#
+partial class Compiler
+{
+    public class WarningMessage : EventArgs
+    {
+        public string Message { get; }
+        public WarningMessage(string message)
+        {
+            Message = message;
+        }
+    }
+
+    public event EventHandler<WarningMessage> onWarning;
+
+    private void Warn(string message)
+    {
+        onWarning?.Invoke(this, new WarningMessage(message));
+    }
+}
+```
+
+其中 `EventHandler<WarningMessage>` 代表一个委托类型：
+
+```c#
+public delegate void EventHandler<TEventArgs>(object? sender, TEventArgs e);
+```
+
+使用时：
+
+```c#
+var compiler = new Compiler();
+compiler.onWarning += (obj, eventArg) => Console.WriteLine(eventArg.Message);
+```
+
+此外，事件还可以自定义 `add` 与 `remove` 访问器，再此不做过多展开。
+
+#### 区别委托与事件
+
+那么，何时使用委托，何时使用事件呢？
+
+这可能是不是一个好区分的问题，甚至有时候用二者皆可。
+
+一般来说，对于事件，你几乎不需要它的返回值，而对于委托，需要与不需要返回值的情况都存在。
+
+一个更好的判断方式是，当你做一件事情的时候，必须要调用这个函数或方法才能完成，这时候使用委托是更好的，即委托一般参与事情的完成；而如果即使不调用这个函数或方法，我要做的事情也能完成，而这个函数只是向外界提供了一个信号，不调用这个函数并不影响我整个事情的完成，这个时候使用事件是更好的。
+
+### 异常处理
+
+C# 支持异常处理。异常处理由一个 `try` 语句块加上至少一个 `catch` 或 `finally` 语句块组成：
+
+```c#
+try
+{
+    /*Some code*/
+}
+/*catch / finally*/
+```
+
+举一个简单的例子，`Exception` 是 `System` 命名空间的一个类，是一切异常类的基类，抛出的异常也必须从 `Exception` 类中派生出来。`Message` 是该类的虚属性，通常储存着异常信息。
+
+```c#
+try
+{
+    /*Some code 1*/
+    throw new Exception("Throw an exception!");
+    /*Some code 2*/
+}
+catch (Exception e)
+{
+    Console.WriteLine(e.Message);
+}
+```
+
+上述代码中，“Some code 1”执行完毕后，将会执行 `throw` 语句，实例化一个 `Exception` 对象，并抛出。然后被下面的 `catch` 捕获到，执行 `catch` 块内的语句。
+
+`try` 块下可能有多个 `catch` 块，则抛出异常时会一次查找下面每个 `catch` 块所捕获的内容。如果找到了可以匹配的类型，则执行该 `catch` 块 ，如果没找到则异常向上抛出。
+
+单独的一个 `catch` 可以捕获全部异常，单独的一个 `throw` 可以将捕获的异常再次抛出：
+
+```c#
+try {}
+catch  // 捕获全部异常
+{
+    Console.WriteLine("Caught");
+    throw; // 将捕获到的异常再次抛出
+}
+```
+
+C# 支持 `finally` 语句块，放在所有 `catch` 块之后。无论是否抛出了异常、是否执行了 `try` 和 `catch`，在执行完全部的 `try` 或 `catch` 后，都将进入 `finally` 块执行，然后再执行其他工作。因此 `finally` 块常用于进行一些恢复或清理的工作。
+
+```c#
+// var rwlock = new ReaderWriterLockSlim();
+rwlock.EnterWriteLock();    // 锁住
+try
+{
+    /* Some code */
+}
+finally
+{
+    rwlock.ExitWriteLock();   // 解锁
+}
+```
+
+## C# 进阶
+
+### 可为空的类型
+
+#### 可为空的值类型
+
+之前提到，引用类型的引用可以为 `null`，而 C# 还支持可以为 `null` 的值类型 。可以为 `null` 的值类型。可以为 `null` 的值类型非常简单，只需要在对应的值类型后加上 `?` 即可构成可以为 `null` 的值类型，例如 `int?`、`double?`，等等。
+
+值类型在 .NET 中都是泛型结构体 `System.Nullable<T>` 的实例，例如 `int?` 等价于 `Nullable<int>`。
+
+#### 可为空的引用类型
+
+C# 8.0 支持可为空的引用类型。在 C# 8.0 之前，普通的引用类型都可以为空，但是这会引发忘记进行 `null` 检查等一系列问题。因此，C# 8.0 引入了“不可为空的引用类型”和“可为空的引用类型”。不可为空的引用类型与之前的引用定义方式相同，而可为空的引用类型是在对应引用类型后面加上 `?`，如 `string?`。
+
+使用可为空的引用类型的好处是，编译器会在编译期间为你检查是否进行了 `null` 判断。如果没有进行 `null` 的判断，会在编译期间给出警告。因此建议大家在引用可能为 `null` 的情况下使用这个特性，能够一定程度上避免 bug 的发生。例如下面的代码会给出警告：
+
+```c#
+public void OutputLength(string? s) => Console.WriteLine(s.Length); // 警告，s 可能为 null
+```
+
+很容易想到可以改成如下形式来消除警告：
+
+```c#
+public void OutputLength(string? s)
+{
+    if (s is null)
+    {
+        Console.WriteLine(-1);
+    }
+    else
+    {
+        Console.WriteLine(s.Length);
+    }
+}
+```
+
+但是更好的做法是更简洁的写法：
+
+```c#
+static public void OutLen(string? s) => Console.WriteLine(s?.Length ?? -1);
+```
+
+此外，将可为 `null` 类型赋值给不可为 `null` 类型之前也必须要进行类型检查。
+
+```c#
+public void OutputLengthNotNull(string s) => Console.WriteLine(s.Length);
+```
+
+```c#
+public void OutputLength(string? s)
+{
+    OutputLengthNotNull(s);  // 警告！未经过 null 检查便将 `string?` 赋值给 `string`
+}
+```
+
+将 `null` 直接赋值给不可为空的引用类型也会导致警告，例如 `string s = null;`，需要改为 `string? s = null;`。
+
+如果我们在程序逻辑上，可以保证一个可为空的类型的值实际上不可能为空，则我们对其进行操作时可以使用 `!` 来禁止警告，例如：
+
+```c#
+int Func(string? s)
+{
+    // return s.Length; // warning CS8602: Dereference of a possibly null reference.
+    return s!.Length;
+}
+```
+
+但是，由于旧的 C# 版本并没有这个设定，因此旧的代码使用新版本的 C# 编译器可能会导致非常多的 `null` 检查警告，这个显然向前兼容性太差。因此，这个 `null` 检查的特性并不总是开启的。默认情况下，C# 编译器并不开启 `null` 检查。开启 `null` 检查有两种方式：
+
+- 在项目 xml 文件（C# 为 .csproj）文件中，设置：
+
+  ```xml
+  <Nullable>enable</Nullable> // 默认为 <Nullable>disable</Nullable>
+  ```
+
+  即可在整个项目中启用 `null` 检查。
+
+- 在单个 .cs 文件中，写上编译指令：
+
+  ```c#
+  #nullable enable
+  ```
+
+  即可在这个文件中启用 `null` 检查。
+
+需要注意的是，与可为空的值类型不同，可为空的值类型与对应的不可为空值类型并不是同一个类型（值类型 `T` 对应的可为空的值类型是 `System.Nullable<T>`），而可为空的引用类型与不可为空引用类型是同一个类型，它们两个的区别只是在编译期间可以帮助检查是否忘记 `null` 的判断以防止直接对 `null` 解引用，减少 BUG 的发生，而在程序编译结束后，即在运行期间两个类型并无任何区别。
+
+此外可为空的引用类型有一些已知的漏洞，例如数组等。
+
+### 托管与垃圾回收
+
+#### 托管代码
+
+之前我们说过，我们编写的 C# 程序并不是直接翻译成机器码执行，而是通过 CLR 运行的，这可以理解为我们把代码的执行交由“CLR”托管了。交给 CLR 运行的代码就叫做“托管代码”。
+
+#### 垃圾回收
+
+.NET 具有一套非常强大的内存管理机制，我们通常称为“垃圾回收器（Garbage Collection，GC）”。垃圾回收器承担了管理内存的功能。之前提到过，在使用 `new` 实例化引用类型的对象时要在“托管堆”内开辟内存空间。实际上，这个“托管堆”的内存管理是由 GC 完成的。因此你在申请一块内存之后，不需要使用 `free` 来手动释放内存。而 GC 帮助你释放掉无法访问对象的内存，因此我们不用担心由于忘记释放内存而造成的内存泄露（不过其他原因导致的内存泄露是有可能的，例如不再使用的静态字段）。
+
+一般来说，GC 有三种条件下会进行垃圾回收（即检查当前存在的不可访问对象，并释放掉）：
+
+- 系统的物理内存不足会导致垃圾回收
+- 托管堆上分配的内存过多，超过了设定的阈值时会导致垃圾回收，不过这个阈值是不断动态调整的
+- 用户手动调用 `System.GC.Collect` 方法会强制进行一次垃圾回收。不过正常情况下我们不用考虑垃圾回收的事情，因此我们也极少使用这个方法
+
+所以正常情况下，我们感受到的是内存在某个我们不知道的时刻被释放掉。
+
+#### 终结器 （析构函数）
+
+终结器（finalizer），有时也称为“析构函数”，是类的一个方法，一个类只能有一个终结器，且不能继承或重载，该方法也不能手动调用（注意，结构中不能定义终结器，终结器仅适用于类），而是在垃圾回收器在回收该对象的内存的时候调用的。
+
+终结器的名字是类名前加上波浪线 `~`，例如：
+
+```c#
+class Foo
+{
+    ~Foo() // 终结器
+    {
+
+    }
+}
+```
+
+终结器没有返回值、没有参数，甚至不能定义访问权限。
+
+> 实际上，终结器是对它的基类 `object` 的虚方法 `Finallize` 的覆盖，即定义一个终结器实际上是在实现方法 `Finalze`。只不过 C# 不允许直接定义 `Finalize` 方法，只能通过定义析构函数的形式定义 `Finallize` 方法。
+
+派生类的终结器退出时会调用基类的终结器。
+
+#### 非托管资源与 `IDisposable`
+
+有时，我们使用的资源并不都是托管的，我们需要手动管理这些非托管资源。例如我们在与一些底层的应用程序接口（API）进行交互的时候，我们必须要考虑资源泄露的问题。这时候，我们可以让类继承 `System.IDisposable` 接口，实现接口中的 `Dispose()` 方法来达到目的。
+
+```c#
+partial class DeviceContext : IDisposable
+{
+    public void Dispose()
+    {
+        /*Release resources*/
+    }
+}
+```
+
+之后我们实例化 `DiviceContext` 时，便可以使用 `using`：
+
+```c#
+public void Draw()
+{
+    using var dc = new DeviceContext();
+    /*Use dc to draw pictures*/
+
+    // 函数退出前调用 Dispose 方法
+}
+```
+
+这时，编译器会把上述代码展开成下面代码的等效代码：
+
+```c#
+public void Draw()
+{
+    DeviceContext? dc = null;
+    try
+    {
+        dc = new DeviceContext();
+        /*Use dc to draw pictures*/
+    }
+    finally { ((IDisposable)dc)?.Dispose(); }
+}
+```
+
+如果想让资源在函数中释放而不是函数退出时：
+
+```c#
+public void Draw()
+{
+    // Do something
+    using (var dc = new DeviceContext())
+    {
+        /* Use dc to draw pictures */
+
+        // 跳出 using 块前调用 Dispose 方法
+    }
+    // Do something
+}
+```
+
+这样我们就能有效管控非托管资源。
+
+#### 扩展方法
+
+C# 可以为一个类定义扩展方法。即一个类定义好后，可以在类外为这个类定义额外的方法，被扩展的类需要作为第一个参数，并用 `this` 标识：
+
+```c#
+static public void Output(this string s, int times)
+{
+    for (int i = 0; i < times; i++)
+    {
+        Console.WriteLine(s);
+    }
+}
+```
+
+我们为 `string` 类定义了一个扩展方法，之后我们可以像使用平常的方法一样使用扩展方法：
+
+```c#
+string s = "Hello";
+s.Output(5);
+```
+
+#### `object` 再探
+
+之前我们说过，一切类型（除指针类型外）都派生自 `object` 类，那么我们所有类都可以使用 `object` 类的方法。`object` 类有一些比较有用的方法。
+
+- `ToString`：`ToString` 是一个虚方法，这意味着任何类和结构都可以重写 `ToString` 方法。它的作用是把一个对象转换为字符串，例如 `5.ToString()` 会返回字符串 `"5"`。
+
+- `GetHashCode`：返回一个 `int` 值。自定义的类可以重写 `GetHashCode` 方法，返回对象的哈希值，就可以将对象用于 .NET 库自带的哈希表当中。
+- `GetType`：获取对象的类型信息，返回一个 `System.Type` 对象，储存这个对象所属类型的信息。
+
+### .NET 数据结构
+
+.NET 提供了很多数据结构可供使用：
+
+#### `System.Collections`
+
+位于 `System.Collections` 命名空间中的集合的每个元素都是 `object`（少数集合如 `BitArray` 除外），这意味着它可以容纳任何类型：
+
+- `ArrayList`：列表（可变长的数组，线性结构）
+- `SortedList`：有序列表
+- `Stack`：栈
+- `Queue`：队列
+- `Hashtable`：哈希表（键值对）
+
+#### `System.Collections.Generic`
+
+位于 `System.ollections.Generic` 命名空间中的集合都是泛型集合，其容纳的元素类型由泛型参数决定：
+
+- `List<T>`：列表（可变长的数组，线性结构）
+- `SortedSet<T>`：有序列表
+- `SortedList<T>`：有序列表（键值对）
+- `LinkedList<T>`：双向链表
+- `Stack<T>`：栈
+- `Queue<T>`：队列
+- `PriorityQueue<T>`：优先级队列
+- `HashSet`：哈希集合
+- `Dictionary`：字典（键值对）
+- `SortedDictionary`：有序字典（键值对，二叉搜索树）
+
+#### `System.Collections.Concurrent`
+
+位于 `System.Collections.Concurrent` 命名空间中的集合时并发安全的，将在其他文档中进行介绍。
+
+### 指针与函数指针
+
+C# 保留了指针类型，但是我们只能定义非托管类型的指针，而托管类型则不能定义指针。但是指针在我们日常的使用中并不多见，因此在此不做过多介绍。
+
+此外，C# 9.0 开始支持函数指针。
+
+## C# 精通
+
+由于篇幅的限制和课时的影响，很多有趣且非常有用的内容我们没有做过多展开，例如：
+
+- [匿名类型](https://learn.microsoft.com/zh-cn/dotnet/csharp/fundamentals/types/anonymous-types)、[记录类型（C# 9.0）和记录值类型（C# 10.0）](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/record)
+- [值类型元组](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/value-tuples)、[弃元](https://learn.microsoft.com/zh-cn/dotnet/csharp/fundamentals/functional/discards)与[析构元组](https://learn.microsoft.com/zh-cn/dotnet/csharp/fundamentals/functional/deconstruct)
+- [模式匹配](https://learn.microsoft.com/zh-cn/dotnet/csharp/fundamentals/functional/pattern-matching)
+- [索引器（Indexer）](https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/indexers/)
+- [特性（Attribute）](https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/concepts/attributes/)
+- [迭代器与可迭代对象](https://learn.microsoft.com/zh-cn/dotnet/csharp/iterators)
+- [反射（Reflection）](https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/concepts/reflection)
+- [语言集成查询（LINQ）](https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/concepts/linq/)
+- [字符编码操作（`System.Text.Encoding`）](https://learn.microsoft.com/zh-cn/dotnet/api/system.text.encoding)、[.NET 正则表达式语法](https://learn.microsoft.com/zh-cn/dotnet/standard/base-types/anchors-in-regular-expressions)与[.NET 正则表达式库](https://learn.microsoft.com/zh-cn/dotnet/standard/base-types/regular-expressions)、[JSON 序列化（`System.Text.Json`）](https://learn.microsoft.com/zh-cn/dotnet/api/system.text.json)、[XML 文件操作](https://learn.microsoft.com/en-us/dotnet/api/system.xml)与[XML 序列化](https://learn.microsoft.com/zh-cn/dotnet/standard/serialization/how-to-serialize-an-object)
+- [.NET 的流](https://learn.microsoft.com/zh-cn/dotnet/api/system.io.stream)与[文件读写（`StreamReader`、`StreamWriter`、`BinaryReader`、`BinaryWriter`）](https://learn.microsoft.com/en-us/dotnet/api/system.io)
+- 使用栈空间提升程序性能：[`ref struct` 类型（C# 7.2）](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/builtin-types/ref-struct)、[`Span<T>`](https://learn.microsoft.com/en-us/dotnet/api/system.span-1)（C# 7.2）与 [`stackalloc`](https://learn.microsoft.com/zh-cn/dotnet/csharp/language-reference/operators/stackalloc)
+- 类似 C 语言的非托管代码编写：[`System.Runtime.InteropServices.Marshal`](https://learn.microsoft.com/zh-cn/dotnet/api/system.runtime.interopservices.marshal)
+- [AOT：本地代码生成](https://learn.microsoft.com/zh-cn/dotnet/core/deploying/native-aot/)（.NET 7）
+- [表达式树](https://learn.microsoft.com/zh-cn/dotnet/csharp/programming-guide/concepts/expression-trees/)
+- [.NET HTTP 客户端框架（`System.Net.Http.HttpClient`）](https://learn.microsoft.com/zh-cn/dotnet/api/system.net.http.httpclient)
+- .NET Web 开发——[ASP.NET](https://dotnet.microsoft.com/zh-cn/apps/aspnet) 与 [Blazor](https://dotnet.microsoft.com/zh-cn/apps/aspnet/web-apps/blazor)
+- ……
+
+略去上述内容不会对我们后续的学习产生太大影响。有兴趣的同学可以查阅微软官方文档：
+
+[https://learn.microsoft.com/zh-cn/dotnet/csharp/](https://learn.microsoft.com/zh-cn/dotnet/csharp/)
+
+深入学习 C#。
+
+我们将在下一节学习使用 C# 进行多线程程序与异步程序的编写。接下来请进一步学习“多线程与异步”单元。
+
+## 参考文献
+
+1. <https://learn.microsoft.com/en-us/>
+2. 《复变函数与数理方程》教案，吴昊（男）
+
+---
+
+## 视频教程
+
+![type:video](https://player.bilibili.com/player.html?aid=765901878&bvid=BV1vr4y1e7pe&cid=491007595&page=4&as_wide=1&high_quality=1&danmaku=0&autoplay=false)

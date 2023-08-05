@@ -102,6 +102,78 @@ nav:
           - Galgames:
               - notes/games/galgames/index.zh.md
               - notes/games/galgames/yuzusoft.zh.md
+  - EESAST:
+      - eesast/index.zh.md
+      - About:
+          - eesast/intro/index.zh.md
+          - eesast/intro/style_guide.zh.md
+          - eesast/intro/mdx.zh.md
+          - eesast/intro/math.zh.md
+          - eesast/intro/structure.zh.md
+          - eesast/intro/contributors.zh.md
+      - Languages:
+          - eesast/languages/index.zh.md
+          - C/C++:
+              - eesast/languages/C&C++/compile.zh.md
+              - eesast/languages/C&C++/makefile&cmake.zh.md
+              - eesast/languages/C&C++/modern_cpp.zh.md
+              - eesast/languages/C&C++/STL.zh.md
+              - eesast/languages/C&C++/multi-file_programming.zh.md
+              - eesast/languages/C&C++/c_cpp_windows.zh.md
+              - eesast/languages/C&C++/macos_cpp.zh.md
+              - eesast/languages/C&C++/OOP.zh.md
+          - "C#":
+              - eesast/languages/CSharp/CSharp_1_basic.zh.md
+              - eesast/languages/CSharp/CSharp_2_multithread.zh.md
+              - eesast/languages/CSharp/Winform.zh.md
+              - eesast/languages/CSharp/WPF.zh.md
+          - eesast/languages/HTML&CSS.zh.md
+          - JS/TS:
+              - eesast/languages/JS&TS/JavaScript.zh.md
+              - eesast/languages/JS&TS/TypeScript.zh.md
+              - eesast/languages/JS&TS/Nodejs.zh.md
+              - eesast/languages/JS&TS/npm.zh.md
+              - eesast/languages/JS&TS/yarn.zh.md
+      - Tools:
+          - eesast/tools/index.zh.md
+          - eesast/tools/docker.zh.md
+          - eesast/tools/git.zh.md
+          - eesast/tools/git_instance.zh.md
+          - eesast/tools/os.zh.md
+          - eesast/tools/linux&shell.zh.md
+          - eesast/tools/wsl.zh.md
+          - eesast/tools/document.zh.md
+          - eesast/tools/tdd.zh.md
+          - eesast/tools/process_management.zh.md
+          - eesast/tools/wsa.zh.md
+      - Game:
+          - eesast/game/index.zh.md
+          - eesast/game/unity.zh.md
+          - Minecraft:
+              - Redstone:
+                  - Redstone Testing:
+                      - eesast/game/minecraft/redstone/redstone_testing/index.zh.md
+                      - eesast/game/minecraft/redstone/redstone_testing/redstone_basic1.zh.md
+          - Communication:
+              - eesast/game/communication/Protobuf.zh.md
+              - eesast/game/communication/gRPC.zh.md
+      - Web:
+          - eesast/web/index.zh.md
+          - Frontend:
+              - eesast/web/frontend/react_practical.zh.md
+              - eesast/web/frontend/react_detailed.zh.md
+              - eesast/web/frontend/webpack.zh.md
+          - Backend:
+              - eesast/web/backend/backend.zh.md
+              - eesast/web/backend/express.zh.md
+              - eesast/web/backend/MongoDB.zh.md
+              - eesast/web/backend/graphql.zh.md
+              - eesast/web/backend/OSS_CDN.zh.md
+          - Deployment:
+              - eesast/web/deployment/CI&CD.zh.md
+              - eesast/web/deployment/nginx.zh.md
+          - Machine Learning:
+              - eesast/web/machine_learning/index.zh.md
   - About:
       - about/index.zh.md
       - about/license.zh.md
@@ -144,6 +216,10 @@ markdown_extensions:
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
+  - pymdownx.keys:
+      separator: +
+      strict: false
+      camel_case: false
   - pymdownx.magiclink:
       repo_url_shorthand: true
       user: Panxuc
