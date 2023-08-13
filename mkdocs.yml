@@ -172,8 +172,8 @@ nav:
           - Deployment:
               - eesast/web/deployment/CI&CD.zh.md
               - eesast/web/deployment/nginx.zh.md
-          - Machine Learning:
-              - eesast/web/machine_learning/index.zh.md
+      - Machine Learning:
+          - eesast/machine_learning/index.zh.md
   - About:
       - about/index.zh.md
       - about/license.zh.md
