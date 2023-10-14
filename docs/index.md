@@ -12,6 +12,6 @@ hide:
 
 也许这只是浪费时间？
 
-[项目](projects/){ .md-button }
-[笔记](notes/){ .md-button }
-[关于](about/){ .md-button .md-button--primary }
+[项目](projects/index.md){ .md-button }
+[笔记](notes/index.md){ .md-button }
+[关于](about/index.md){ .md-button .md-button--primary }

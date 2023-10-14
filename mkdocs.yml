@@ -1,7 +1,7 @@
 site_name: Xuc's Docs
 site_author: Xuc Pan
 copyright: Copyright &copy; 2023 Xuc Pan
-repo_url: https://github.com/Panxuc/docs
+repo_url: https://docs.panxuc.com/
 repo_name: Panxuc/docs
 edit_uri: edit/main/docs/
 theme:
@@ -10,6 +10,7 @@ theme:
   favicon: assets/images/favicon.png
   icon:
     repo: fontawesome/brands/github
+  language: zh
   custom_dir: overrides
   features:
     - announce.dismiss
@@ -27,6 +28,9 @@ theme:
     - navigation.tabs
     - navigation.top
     - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
     - toc.follow
     # - toc.integrate
   palette:
@@ -43,19 +47,6 @@ theme:
         icon: material/brightness-4
         name: Switch to Light Mode
 extra:
-  alternate:
-    - name: English
-      link: ./en/
-      lang: en
-    - name: 中文（简体）
-      link: ./zh/
-      lang: zh
-    - name: 中文（繁體）
-      link: ./zh-TW/
-      lang: zh-TW
-    - name: 日本語
-      link: ./ja/
-      lang: ja
   social:
     - icon: fontawesome/brands/facebook
       link: https://www.facebook.com/panxuc/
@@ -70,128 +61,47 @@ extra:
     - icon: fontawesome/brands/steam
       link: https://steamcommunity.com/id/panxuc/
 nav:
-  - Home: index.zh.md
-  - Projects:
-      - projects/index.zh.md
-      - Coursework:
-          - projects/coursework/index.zh.md
-          - projects/coursework/cpd1.zh.md
-          - projects/coursework/cpd2.zh.md
-      - Beyond Course:
-          - projects/beyondcourse/index.zh.md
-          - projects/beyondcourse/eesastsd.zh.md
-          - projects/beyondcourse/eesasthd.zh.md
-  - Notes:
-      - notes/index.zh.md
-      - Life in Tsinghua:
-          - notes/tsinghua/index.zh.md
-          - notes/tsinghua/socialmedia.zh.md
-          - notes/tsinghua/utilities.zh.md
-          - notes/tsinghua/network.zh.md
-          - notes/tsinghua/courses.zh.md
-          - notes/tsinghua/locations.zh.md
-      - OS & Software:
-          - notes/os/index.zh.md
-          - notes/os/windows11.zh.md
-          - notes/os/archlinux.zh.md
-          - notes/os/android.zh.md
-      - Games:
-          - notes/games/index.zh.md
-          - notes/games/aceattorney.zh.md
-          - notes/games/touhou.zh.md
+  - 主页: index.md
+  - 项目:
+      - projects/index.md
+      - 课程之内:
+          - projects/coursework/index.md
+          - projects/coursework/cpd1.md
+          - projects/coursework/cpd2.md
+      - 课程之外:
+          - projects/beyondcourse/index.md
+          - projects/beyondcourse/eesastsd.md
+          - projects/beyondcourse/eesasthd.md
+  - 笔记:
+      - notes/index.md
+      - 清华生活:
+          - notes/tsinghua/index.md
+          - notes/tsinghua/socialmedia.md
+          - notes/tsinghua/utilities.md
+          - notes/tsinghua/network.md
+          - notes/tsinghua/courses.md
+          - notes/tsinghua/locations.md
+      - 操作系统与软件:
+          - notes/os/index.md
+          - notes/os/windows11.md
+          - notes/os/archlinux.md
+          - notes/os/steamos.md
+          - notes/os/android.md
+      - 游戏与娱乐:
+          - notes/games/index.md
+          - notes/games/aceattorney.md
+          - notes/games/touhou.md
           - Galgames:
-              - notes/games/galgames/index.zh.md
-              - notes/games/galgames/yuzusoft.zh.md
-  - EESAST:
-      - eesast/index.zh.md
-      - About:
-          - eesast/intro/index.zh.md
-          - eesast/intro/style_guide.zh.md
-          - eesast/intro/mdx.zh.md
-          - eesast/intro/math.zh.md
-          - eesast/intro/structure.zh.md
-          - eesast/intro/contributors.zh.md
-      - Languages:
-          - eesast/languages/index.zh.md
-          - C/C++:
-              - eesast/languages/C&C++/compile.zh.md
-              - eesast/languages/C&C++/makefile&cmake.zh.md
-              - eesast/languages/C&C++/modern_cpp.zh.md
-              - eesast/languages/C&C++/STL.zh.md
-              - eesast/languages/C&C++/multi-file_programming.zh.md
-              - eesast/languages/C&C++/c_cpp_windows.zh.md
-              - eesast/languages/C&C++/macos_cpp.zh.md
-              - eesast/languages/C&C++/OOP.zh.md
-          - "C#":
-              - eesast/languages/CSharp/CSharp_1_basic.zh.md
-              - eesast/languages/CSharp/CSharp_2_multithread.zh.md
-              - eesast/languages/CSharp/Winform.zh.md
-              - eesast/languages/CSharp/WPF.zh.md
-          - eesast/languages/HTML&CSS.zh.md
-          - JS/TS:
-              - eesast/languages/JS&TS/JavaScript.zh.md
-              - eesast/languages/JS&TS/TypeScript.zh.md
-              - eesast/languages/JS&TS/Nodejs.zh.md
-              - eesast/languages/JS&TS/npm.zh.md
-              - eesast/languages/JS&TS/yarn.zh.md
-      - Tools:
-          - eesast/tools/index.zh.md
-          - eesast/tools/docker.zh.md
-          - eesast/tools/git.zh.md
-          - eesast/tools/git_instance.zh.md
-          - eesast/tools/os.zh.md
-          - eesast/tools/linux&shell.zh.md
-          - eesast/tools/wsl.zh.md
-          - eesast/tools/document.zh.md
-          - eesast/tools/tdd.zh.md
-          - eesast/tools/process_management.zh.md
-          - eesast/tools/wsa.zh.md
-      - Game:
-          - eesast/game/index.zh.md
-          - eesast/game/unity.zh.md
-          - Minecraft:
-              - Redstone:
-                  - Redstone Testing:
-                      - eesast/game/minecraft/redstone/redstone_testing/index.zh.md
-                      - eesast/game/minecraft/redstone/redstone_testing/redstone_basic1.zh.md
-          - Communication:
-              - eesast/game/communication/Protobuf.zh.md
-              - eesast/game/communication/gRPC.zh.md
-      - Web:
-          - eesast/web/index.zh.md
-          - Frontend:
-              - eesast/web/frontend/react_practical.zh.md
-              - eesast/web/frontend/react_detailed.zh.md
-              - eesast/web/frontend/webpack.zh.md
-          - Backend:
-              - eesast/web/backend/backend.zh.md
-              - eesast/web/backend/express.zh.md
-              - eesast/web/backend/MongoDB.zh.md
-              - eesast/web/backend/graphql.zh.md
-              - eesast/web/backend/OSS_CDN.zh.md
-          - Deployment:
-              - eesast/web/deployment/CI&CD.zh.md
-              - eesast/web/deployment/nginx.zh.md
-      - Machine Learning:
-          - eesast/machine_learning/index.zh.md
-  - About:
-      - about/index.zh.md
-      - about/license.zh.md
+              - notes/games/galgames/index.md
+              - notes/games/galgames/yuzusoft.md
+  - 关于:
+      - about/index.md
+      - about/license.md
 plugins:
   - search:
       lang:
-        - en
         - zh
-        - zh-TW
-        - ja
       jieba_dict: dict.txt
-  - i18n:
-      default_language: zh
-      languages:
-        en: english
-        zh: 中文（简体）
-        zh-TW: 中文（繁體）
-        ja: 日本語
   - mkdocs-video
 markdown_extensions:
   - abbr
