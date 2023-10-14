@@ -1,7 +1,7 @@
 site_name: Xuc's Docs
 site_author: Xuc Pan
 copyright: Copyright &copy; 2023 Xuc Pan
-repo_url: https://docs.panxuc.com/
+repo_url: https://github.com/Panxuc/docs
 repo_name: Panxuc/docs
 edit_uri: edit/main/docs/
 theme:

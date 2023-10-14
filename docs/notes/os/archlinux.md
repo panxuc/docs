@@ -27,6 +27,10 @@ Arch Linux可以被制作成多种类型的安装介质，如 U 盘 、光盘和
 
 如果您很懒惰，您可以选用 [`archinstall`](#archinstall) 或 [`arch-linux-gui`](#arch-linux-gui) 安装，但是这样很无趣。Arch Linux 的安装能够考查您对操作系统和 Linux 的了解程度，其高度自定义化可以让您完全掌控您的计算机；同时，当其他人看见您通过正常途径安装时会钦佩您。所以，我还是推荐您通过正常途径安装。
 
+??? note "关于 `arch-linux-gui`"
+
+    事实上，经过笔者测试，2023 年的 [`arch-linux-gui`](#arch-linux-gui) 安装的系统非常漂亮、省心，且自带笔记本核显驱动。同时，笔者现在也十分懒惰，所以 2023 年的笔者也推荐您使用 [`arch-linux-gui`](#arch-linux-gui) 安装。
+
 #### 配置控制台键盘布局
 
 在安装之前，您需要配置控制台的键盘布局。如果您使用的是英文键盘，那么您可以跳过这一步。
@@ -207,19 +211,20 @@ root ALL=(ALL:ALL) ALL
 reboot
 ```
 
-#### 安装图形化界面（`KDE Plasma`）
+#### 安装图形化界面
 
-``` bash
-pacman -S xorg plasma sddm konsole dolphin kate ark okular
-systemctl enable sddm
-```
+=== "KDE Plasma"
 
-#### 安装图形化界面（`GNOME`）
+    ``` bash
+    pacman -S xorg plasma sddm konsole dolphin kate ark okular
+    systemctl enable sddm
+    ```
+=== "GNOME"
 
-``` bash
-pacman -S xorg gnome
-systemctl enable gdm
-```
+    ``` bash
+    pacman -S xorg gnome
+    systemctl enable gdm
+    ```
 
 #### 添加 `archlinuxcn` 源
 
@@ -236,25 +241,27 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 
 同理可以添加 `multilib` 源以安装 32 位软件，如 [:fontawesome-brands-steam: Steam](https://archlinux.org/packages/multilib/x86_64/steam/)。
 
-#### 添加 `AUR` 源（`yay`）
+#### 添加 `AUR` 源
 
-``` sh
-git clone https://aur.archlinux.org/yay
-cd yay
-makepkg -si
-```
+=== "`yay`"
 
-中国大陆读者请自行解决网络问题（如果有）。
+    ``` sh
+    git clone https://aur.archlinux.org/yay
+    cd yay
+    makepkg -si
+    ```
 
-#### 添加 `AUR` 源（`paru`）
+    中国大陆读者请自行解决网络问题（如果有）。
 
-先添加 `archlinuxcn` 源。
+=== "`paru`"
 
-``` sh
-pacman -S paru
-```
+    先添加 `archlinuxcn` 源。
 
-显然此方法比安装 `yay` 不知道高到哪里去了。
+    ``` sh
+    pacman -S paru
+    ```
+
+    显然此方法比安装 `yay` 不知道高到哪里去了。
 
 #### 设置 `GRUB` 引导
 
@@ -275,17 +282,19 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 如果您比较懒惰，且不需要在 Arch Linux 上玩大型游戏，您只需要安装一款通用显卡驱动 `mesa` 即可。在上述情况下，只有您的 Intel 集成显卡会工作。
 
-然而，如果您不得不使用 NVIDIA 独立显卡，如外接显示器需要连接到直连 NVIDIA 独立显卡的 DP 接口时，可以参考以下内容。
+然而，如果您不得不使用 NVIDIA 独立显卡，如像笔者一样，外接显示器需要连接到直连 NVIDIA 独立显卡的 DP 接口时，可以参考以下内容。
 
 > 参见 [Optimus Manager 的上游文档](https://github.com/Askannz/optimus-manager)。
 
 先妥善安装好 [`nvidia`](https://archlinux.org/packages/extra/x86_64/nvidia/) 驱动，再安装 [`optimus-manager`](https://aur.archlinux.org/packages/optimus-manager) （通过 `yay` 或 `paru`）。
 
-安装之后，`optimus-manager` 守护进程应该已经自动启动，但是您可以使用 `systemctl status optimus-manager.service` 检查它的状态。
+安装之后，`optimus-manager` 守护进程并不会自动启动，您可以使用 `systemctl enable --now optimus-manager.service` 设置它开机启动并立即启动。
 
 它可能并不能如它所宣称的那样正常切换显卡，不过我们可以设置它在不同电源模式下使用什么显卡，这样成功几率可能高一点。
 
-#### 基本完成
+通过安装 [`optimus-manager-qt`](https://aur.archlinux.org/packages/optimus-manager-qt) （通过 `yay` 或 `paru`）可以在系统托盘中可视化地切换显卡。
+
+#### 基本完成？
 
 接下来请使用您可能安装并失败了好几遍的 Arch Linux。
 
@@ -301,7 +310,8 @@ archinstall
 
 下载镜像：
 
-- 清华大学开源软件镜像站：https://mirrors.tuna.tsinghua.edu.cn/osdn/arch-linux-gui/
+- 官网：https://archlinuxgui.com/
+- ~~（OUTDATED）清华大学开源软件镜像站：https://mirrors.tuna.tsinghua.edu.cn/osdn/arch-linux-gui/~~
 
 `arch-linux-gui` 的安装与 [:simple-manjaro: Manjaro](https://manjaro.org/) 类似。
 
