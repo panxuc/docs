@@ -81,16 +81,24 @@ nav:
           - notes/tsinghua/network.md
           - notes/tsinghua/courses.md
           - notes/tsinghua/locations.md
-      - 操作系统与软件:
+      - 操作系统:
           - notes/os/index.md
           - notes/os/windows11.md
           - notes/os/archlinux.md
           - notes/os/steamos.md
           - notes/os/android.md
-      - 游戏与娱乐:
+      - 编程语言:
+          - notes/languages/index.md
+          - notes/languages/markdown.md
+          - notes/languages/latex.md
+          - notes/languages/python.md
+      - 工具软件:
+          - notes/softwares/index.md
+          - notes/softwares/vim.md
+      - 游戏娱乐:
           - notes/games/index.md
           - notes/games/aceattorney.md
-          - notes/games/touhou.md
+          - notes/games/persona.md
           - Galgames:
               - notes/games/galgames/index.md
               - notes/games/galgames/yuzusoft.md
@@ -110,6 +118,7 @@ markdown_extensions:
   - def_list
   - footnotes
   - md_in_html
+  - tables
   - toc:
       permalink: true
   - pymdownx.arithmatex:
@@ -117,6 +126,7 @@ markdown_extensions:
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.caret
+  - pymdownx.critic
   - pymdownx.details
   - pymdownx.emoji:
       emoji_generator: !!python/name:materialx.emoji.to_svg
