@@ -40,8 +40,9 @@ theme:
       toggle:
         icon: material/brightness-7
         name: Switch to Dark Mode
-    - scheme: slate
-      primary: indigo
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
       accent: indigo
       toggle:
         icon: material/brightness-4
@@ -68,6 +69,8 @@ nav:
           - projects/coursework/index.md
           - projects/coursework/cpd1.md
           - projects/coursework/cpd2.md
+          - 数算OJ:
+              - projects/coursework/daa/README.md
       - 课程之外:
           - projects/beyondcourse/index.md
           - projects/beyondcourse/eesastsd.md

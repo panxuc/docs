@@ -6,12 +6,14 @@ hide:
   - toc
 ---
 
-# 主页
+# Xuc's Docs
 
-## 请看清华大学电子工程系一个愚蠢的大二学生写的文档。
+## 简介
 
-也许这只是浪费时间？
+Xuc's Docs 是一个基于 [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) 的文档站点，用于记录一些学习笔记。
 
-[项目](projects/index.md){ .md-button }
-[笔记](notes/index.md){ .md-button }
-[关于](about/index.md){ .md-button .md-button--primary }
+## 特色内容
+
+[数算OJ](projects/coursework/daa/README.md){ .md-button }
+[ArchLinux](notes/os/archlinux.md){ .md-button }
+[逆转裁判](notes/games/aceattorney.md){ .md-button }
