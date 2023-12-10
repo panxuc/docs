@@ -121,6 +121,7 @@ nav:
               - notes/languages/python/matplotlib.md
       - 工具软件:
           - notes/softwares/vim.md
+          - notes/softwares/platformio.md
       - 游戏娱乐:
           - notes/games/aceattorney.md
           - notes/games/persona.md
