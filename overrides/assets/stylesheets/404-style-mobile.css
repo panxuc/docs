@@ -1,0 +1,163 @@
+.header-404 {
+    display: flex;
+    padding: 8px 8px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, .4);
+}
+
+.header-404 img {
+    height: 24px;
+    width: auto;
+    vertical-align: middle;
+}
+
+.content-404 {
+    background: linear-gradient(to bottom, #69a1e6, #215b9e);
+    height: calc(100% - 260px);
+    text-align: center;
+    position: relative;
+}
+
+.content-404 .main-404 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.content-404 img {
+    height: 90px;
+    width: auto;
+    vertical-align: middle;
+}
+
+.content-404 .txxx-404 {
+    color: #fff;
+    font-size: 14px;
+    margin-top: 20px;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .5);
+}
+
+.content-404 .fxtx-404 {
+    line-height: 1.6;
+    font-size: 16px;
+    margin-top: 20px;
+    letter-spacing: 2px;
+    background: rgba(255, 255, 255, .5);
+    padding: 20px 0px;
+    margin-left: 8%;
+    margin-right: 8%;
+    text-align: center;
+    border-radius: 12px;
+}
+
+.content-404 .fxtx-404 span {
+    color: #f00;
+    font-size: 20px;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.content-404 .phone-404 {
+    font-size: 18px;
+    margin-top: 25px;
+    color: #fff;
+}
+
+.content-404 .line-404 {
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 20px;
+    height: 1px;
+    background: linear-gradient(to right, rgba(255, 255, 255, .1), rgba(255, 255, 255, 1), rgba(255, 255, 255, .1));
+}
+
+.footer-404 {
+    font-size: 14px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.footer-404 .ewm-404 {
+    width: 73px;
+    margin: 10px 5px 0;
+    padding-bottom: 20px;
+}
+
+.footer-404 .gzh-404,
+.footer-404 .app-ewm-404 {
+    display: inline-block;
+    position: relative;
+}
+
+.footer-404 .gzh-404 {
+    margin-left: 20px;
+}
+
+.footer-404 .gzh-404:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 73px;
+    top: 30px;
+    left: -10px;
+    background: rgba(0, 0, 0, .4);
+}
+
+.footer-404 .register-404 {
+    font-size: 11px;
+    margin-top: 20px;
+    line-height: 15px;
+    color: rgba(0, 0, 0, .7);
+}
+
+.footer-404 .inline-block-404 {
+    display: inline-block;
+    position: relative;
+}
+
+.footer-404 .ts-404 {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 66px;
+}
+
+.footer-404 a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, .7);
+}
+
+.footer-404 a:hover {
+    color: #0079ff;
+}
+
+.footer-404 .app-btn-404 {
+    width: 140px;
+    height: 32px;
+    font-size: 15px;
+    color: rgba(255, 255, 255, .85);
+    margin-top: 15px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a73e8;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.footer-404 .app-btn-404 :hover {
+    opacity: .8;
+}
+
+.footer-404 .app-btn img {
+    width: 28px;
+    margin-right: 8px;
+}
+
+.footer-404 .gzh-404,
+.footer-404 .app-ewm-404 .title-404 {
+    padding-bottom: 10px;
+}

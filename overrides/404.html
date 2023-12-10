@@ -1,7 +1,58 @@
-{#-
-  This file was automatically generated - do not edit
--#}
 {% extends "main.html" %}
+{% block htmltitle %}
+<title>【国家反诈中心、工信部反诈中心、中国电信联合提醒】</title>
+{% endblock %}
+{% block styles %}
+<link rel="stylesheet" href="{{ 'assets/stylesheets/main.eebd395e.min.css' | url }}">
+{% if config.theme.palette %}
+{% set palette = config.theme.palette %}
+<link rel="stylesheet" href="{{ 'assets/stylesheets/palette.ecc896b0.min.css' | url }}">
+{% endif %}
+{% include "partials/icons.html" %}
+<link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/404-style.css' | url }}"
+  media="screen and (min-width: 800px)">
+<link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/404-style-mobile.css' | url }}"
+  media="screen and (max-width: 799px)">
+{% endblock %}
+{% block site_nav %}
+{% endblock %}
 {% block content %}
-  <h1>404 - Not found</h1>
+<div class="header-404">
+  <img id="zg" src="https://404.panxuc.com/img/zg.png">
+  <img id="gxb" src="https://404.panxuc.com/img/gxb.png">
+  <img id="dx" class="comp-logo-404" src="https://404.panxuc.com/img/dx.png">
+</div>
+<div class="content-404">
+  <div class="main-404">
+    <img id="gjfzzx" src="https://404.panxuc.com/img/gjfzzx.png">
+    <img id="gxbfzzx" src="https://404.panxuc.com/img/gxbfzzx.png">
+    <img id="dxtb" class="comp-logo-404" src="https://404.panxuc.com/img/dxtb.png" />
+    <div id="txxx" class="txxx-404">国家反诈中心、工信部反诈中心、中国电信提示您</div>
+    <div class="line-404"></div>
+    <div class="fxtx-404">您访问的网站/网页存在<span>诈骗风险</span>，请注意个人信息和财产安全</div>
+    <div class="phone-404">涉诈举报电话：110&nbsp;或&nbsp;96110&nbsp;&nbsp;</div>
+    <div class="phone-404">域名申诉电话：010-67825169&nbsp;或&nbsp;010-67825170&nbsp;或&nbsp;18600096110&nbsp;&nbsp;</div>
+  </div>
+</div>
+<div class="footer-404">
+  <div>
+    <div class="app-ewm-404">
+      <div class="title-404">国家反诈中心</div>
+      <div class="app-btn-404"
+        onclick="window.open('https://a.app.qq.com/o/simple.jsp?pkgname=com.hicorenational.antifraud')">
+        <img src="https://404.panxuc.com/img/az.png" alt="">
+        <span>安卓下载</span>
+      </div>
+      <div class="app-btn-404" onclick="window.open('https://apps.apple.com/cn/app/国家反诈中心/id1552823102')">
+        <img src="https://404.panxuc.com/img/pg.png" alt="">
+        <span>苹果下载</span>
+      </div>
+    </div>
+    <div class="gzh-404">
+      <div>工信部反诈专班</div>
+      <img class="ewm-404" src="https://404.panxuc.com/img/gzh.png" alt="">
+      <div class="ts-404">(公众号)</div>
+    </div>
+  </div>
+</div>
 {% endblock %}
