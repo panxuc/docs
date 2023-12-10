@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Xuc 的笔记 - 目录
 
 - [🏫 清华生活](tsinghua/index.md)

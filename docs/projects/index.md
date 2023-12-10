@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Xuc 的项目 - 目录
 
 - [课程作业](coursework/index.md)

@@ -65,45 +65,66 @@ nav:
   - 主页: index.md
   - 项目:
       - projects/index.md
-      - 课程之内:
-          - projects/coursework/index.md
+      - 课程作业:
           - projects/coursework/cpd1.md
           - projects/coursework/cpd2.md
-          - 数算OJ:
+          - projects/coursework/pdmes.md
+          - 数据与算法:
               - projects/coursework/daa/README.md
-      - 课程之外:
-          - projects/beyondcourse/index.md
+              - A + B Problem:
+                  - 题目: projects/coursework/daa/prob/1001.md
+                  - 答案: projects/coursework/daa/ans/1001.md
+              - The Nth Number in Fibonacci Sequence:
+                  - 题目: projects/coursework/daa/prob/1002.md
+                  - 答案: projects/coursework/daa/ans/1002.md
+              - 丢失的练习册:
+                  - 题目: projects/coursework/daa/prob/2023201.md
+                  - 答案: projects/coursework/daa/ans/2023201.md
+              - 军训排队:
+                  - 题目: projects/coursework/daa/prob/2023202.md
+                  - 答案: projects/coursework/daa/ans/2023202.md
+              - 比武:
+                  - 题目: projects/coursework/daa/prob/2023203.md
+                  - 答案: projects/coursework/daa/ans/2023203.md
+              - 缺损二叉树:
+                  - 题目: projects/coursework/daa/prob/2023204.md
+                  - 答案: projects/coursework/daa/ans/2023204.md
+              - 信息传递:
+                  - 题目: projects/coursework/daa/prob/2023205.md
+                  - 答案: projects/coursework/daa/ans/2023205.md
+              - 跳跳乐:
+                  - 题目: projects/coursework/daa/prob/2023206.md
+                  - 答案: projects/coursework/daa/ans/2023206.md
+              - 带限矩阵方程组求解:
+                  - 题目: projects/coursework/daa/prob/2023207.md
+                  - 答案: projects/coursework/daa/ans/2023207.md
+      - 课外活动:
           - projects/beyondcourse/eesastsd.md
           - projects/beyondcourse/eesasthd.md
   - 笔记:
       - notes/index.md
       - 清华生活:
-          - notes/tsinghua/index.md
           - notes/tsinghua/socialmedia.md
           - notes/tsinghua/utilities.md
           - notes/tsinghua/network.md
           - notes/tsinghua/courses.md
           - notes/tsinghua/locations.md
       - 操作系统:
-          - notes/os/index.md
           - notes/os/windows11.md
           - notes/os/archlinux.md
           - notes/os/steamos.md
           - notes/os/android.md
       - 编程语言:
-          - notes/languages/index.md
           - notes/languages/markdown.md
           - notes/languages/latex.md
-          - notes/languages/python.md
+          - Python:
+              - notes/languages/python/matplotlib.md
       - 工具软件:
-          - notes/softwares/index.md
           - notes/softwares/vim.md
       - 游戏娱乐:
-          - notes/games/index.md
           - notes/games/aceattorney.md
           - notes/games/persona.md
           - Galgames:
-              - notes/games/galgames/index.md
               - notes/games/galgames/yuzusoft.md
   - 关于:
       - about/index.md

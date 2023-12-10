@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # 计算机程序设计基础（2）
 
 ## 五子棋 [:fontawesome-brands-github:]()

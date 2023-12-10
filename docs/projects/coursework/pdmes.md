@@ -2,17 +2,11 @@
 comments: true
 ---
 
-# 清华大学电子系学生科协硬件部
+# 电子系统专题设计与制作
 
-## 暑培 2023
+## XPrism 智能眼镜 [:fontawesome-brands-github:](https://github.com/Panxuc/XPrism)
 
-没有时间听捏😭
-
-## 硬件设计大赛
-
-### XPrism 智能眼镜 [:fontawesome-brands-github:](https://github.com/Panxuc/XPrism)
-
-#### 关于
+### 关于
 
 ![appicon](https://cdn.jsdelivr.net/gh/Panxuc/XPrism@latest/.readme/appicon.png)
 
@@ -26,7 +20,7 @@ XPrism 是基于 ESP32-PICO-D4 开发的智能眼镜。
 
 Copyright © 2023 [潘徐成](https://github.com/Panxuc) [孙宇琦](https://github.com/always-del)
 
-#### 特色
+### 特色
 
 - 使用 ESP32-PICO-KIT 开发板作为主控，使用 ESP32-CAM 模组作为摄像头。
 - 可以使用实体按钮、动作识别等多种方式控制。
@@ -34,7 +28,7 @@ Copyright © 2023 [潘徐成](https://github.com/Panxuc) [孙宇琦](https://git
 - 与手机端配合，可以实现接收手机通知提醒等多种功能。
 - 支持最高 32 GB 的 TF 卡，可以存储大量数据。可以直接打开图片、视频等文件。
 
-#### 致谢
+### 致谢
 
 XPrism 的诞生离不开以下开源项目的支持、参考与引用。
 
