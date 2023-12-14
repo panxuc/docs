@@ -116,6 +116,7 @@ nav:
           - notes/os/android.md
       - 编程语言:
           - notes/languages/markdown.md
+          - notes/languages/html.md
           - notes/languages/latex.md
           - Python:
               - notes/languages/python/matplotlib.md

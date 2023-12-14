@@ -16,7 +16,8 @@ comments: true
     - [:fontawesome-brands-android: Android](os/android.md)
 - **:fontawesome-solid-language: 编程语言**
     - [:fontawesome-brands-markdown: Markdown](languages/markdown.md)
-    - [:simple-latex: LaTeX](languages/latex.md)
+    - [:fontawesome-brands-html5: HTML](languages/html.md)
+    - [$\LaTeX$](languages/latex.md)
     - [:fontawesome-brands-python: Python](languages/python.md)
 - **:fontawesome-solid-terminal: 工具软件**
     - [:simple-vim: Vim](softwares/vim.md)
