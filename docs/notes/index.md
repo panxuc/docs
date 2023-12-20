@@ -23,6 +23,7 @@ comments: true
     - [:simple-vim: Vim](softwares/vim.md)
     - [:simple-platformio: PlatformIO](softwares/platformio.md)
 - **:material-controller: 游戏与娱乐**
+    - [:mahjong: 麻将](games/mahjong.md)
     - [逆转裁判](games/aceattorney.md)
     - [女神异闻录](games/persona.md)
     - [Galgames](games/galgames/index.md)
