@@ -1,9 +1,7 @@
 # 主页
 
-## 请看清华大学电子工程系一个愚蠢的大二学生写的文档。
+# Xuc's Docs
 
-也许这只是浪费时间？
+## 简介
 
-[项目](docs/projects/)
-[笔记](docs/notes/)
-[关于](docs/about/)
+Xuc's Docs 是一个基于 [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) 的文档站点，用于记录一些学习笔记。
