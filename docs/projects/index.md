@@ -13,7 +13,7 @@ comments: true
     - [电子系统专题设计与制作](coursework/pdmes.md)
         - [XPrism 智能眼镜](coursework/pdmes.md#xprism)
     - [数据与算法](coursework/daa/README.md)
-- [课程以外](beyondcourse/index.md)
+- [课外活动](beyondcourse/index.md)
     - [清华大学电子系学生科协软件部](beyondcourse/eesastsd.md)
         - [THUAI6（努力少女戏尔危）](beyondcourse/eesastsd.md#thuai6)
         - [暑培 2023](beyondcourse/eesastsd.md#2023)
