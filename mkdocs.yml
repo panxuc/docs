@@ -170,6 +170,9 @@ nav:
               - 带限矩阵方程组求解:
                   - 题目: projects/coursework/daa/prob/2023207.md
                   - 答案: projects/coursework/daa/ans/2023207.md
+              - 缺失数据恢复:
+                  - 题目: projects/coursework/daa/prob/2023208.md
+                  - 答案: projects/coursework/daa/ans/2023208.md
       - 课外活动:
           - projects/beyondcourse/eesastsd.md
           - projects/beyondcourse/eesasthd.md
