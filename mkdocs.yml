@@ -186,8 +186,9 @@ nav:
           - notes/os/steamos.md
           - notes/os/android.md
       - 编程语言:
-          - notes/languages/markdown.md
           - notes/languages/html.md
+          - notes/languages/markdown.md
+          - notes/languages/typst.md
           - notes/languages/latex.md
           - Python:
               - notes/languages/python/matplotlib.md

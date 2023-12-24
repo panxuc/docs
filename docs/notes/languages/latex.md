@@ -262,49 +262,123 @@ $$
 x^2, x_2
 ```
 
-$$
-x^2, x_2
-$$
+<div class="result">
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msup>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>,</mo>
+  <msub>
+    <mi>x</mi>
+    <mn>2</mn>
+  </msub>
+</math>
+</div>
 
 ``` latex title="分式"
 \frac{1}{2}
 ```
 
-$$
-\frac{1}{2}
-$$
+<div class="result">
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mfrac>
+    <mn>1</mn>
+    <mn>2</mn>
+  </mfrac>
+</math>
+</div>
 
 ``` latex title="根式"
 \sqrt{2}, \sqrt[3]{2}
 ```
 
-$$
-\sqrt{2}, \sqrt[3]{2}
-$$
+<div class="result">
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msqrt>
+    <mn>2</mn>
+  </msqrt>
+  <mo>,</mo>
+  <mroot>
+    <mn>2</mn>
+    <mn>3</mn>
+  </mroot>
+</math>
+</div>
 
 ``` latex title="积分"
 \int_{-\infty}^{+\infty} e^{-x^2} dx
 ```
 
-$$
-\int_{-\infty}^{+\infty} e^{-x^2} dx
-$$
+<div class="result">
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msubsup>
+    <mo data-mjx-texclass="OP">&#x222B;</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mo>&#x2212;</mo>
+      <mi mathvariant="normal">&#x221E;</mi>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mo>+</mo>
+      <mi mathvariant="normal">&#x221E;</mi>
+    </mrow>
+  </msubsup>
+  <msup>
+    <mi>e</mi>
+    <mrow data-mjx-texclass="ORD">
+      <mo>&#x2212;</mo>
+      <msup>
+        <mi>x</mi>
+        <mn>2</mn>
+      </msup>
+    </mrow>
+  </msup>
+  <mi>d</mi>
+  <mi>x</mi>
+</math>
+</div>
 
 ``` latex title="求和"
 \sum_{i=1}^{n} i
 ```
 
-$$
-\sum_{i=1}^{n} i
-$$
+<div class="result">
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <munderover>
+    <mo data-mjx-texclass="OP">&#x2211;</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>i</mi>
+      <mo>=</mo>
+      <mn>1</mn>
+    </mrow>
+    <mrow data-mjx-texclass="ORD">
+      <mi>n</mi>
+    </mrow>
+  </munderover>
+  <mi>i</mi>
+</math>
+</div>
 
 ``` latex title="极限"
 \lim_{x \to \infty} \frac{1}{x}
 ```
 
-$$
-\lim_{x \to \infty} \frac{1}{x}
-$$
+<div class="result">
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <munder>
+    <mo data-mjx-texclass="OP" movablelimits="true">lim</mo>
+    <mrow data-mjx-texclass="ORD">
+      <mi>x</mi>
+      <mo accent="false" stretchy="false">&#x2192;</mo>
+      <mi mathvariant="normal">&#x221E;</mi>
+    </mrow>
+  </munder>
+  <mfrac>
+    <mn>1</mn>
+    <mi>x</mi>
+  </mfrac>
+</math>
+</div>
 
 ``` latex title="矩阵"
 \begin{bmatrix}
@@ -314,11 +388,46 @@ $$
 \end{bmatrix}
 ```
 
-$$
-\begin{bmatrix}
-    1 & 2 & 3 \\
-    4 & 5 & 6 \\
-    7 & 8 & 9
-\end{bmatrix}
-$$
-
+<div class="result">
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <mrow data-mjx-texclass="INNER">
+    <mo data-mjx-texclass="OPEN">[</mo>
+    <mtable columnspacing="1em" rowspacing="4pt">
+      <mtr>
+        <mtd>
+          <mn>1</mn>
+        </mtd>
+        <mtd>
+          <mn>2</mn>
+        </mtd>
+        <mtd>
+          <mn>3</mn>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mn>4</mn>
+        </mtd>
+        <mtd>
+          <mn>5</mn>
+        </mtd>
+        <mtd>
+          <mn>6</mn>
+        </mtd>
+      </mtr>
+      <mtr>
+        <mtd>
+          <mn>7</mn>
+        </mtd>
+        <mtd>
+          <mn>8</mn>
+        </mtd>
+        <mtd>
+          <mn>9</mn>
+        </mtd>
+      </mtr>
+    </mtable>
+    <mo data-mjx-texclass="CLOSE">]</mo>
+  </mrow>
+</math>
+</div>

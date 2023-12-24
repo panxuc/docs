@@ -15,8 +15,9 @@ comments: true
     - [:simple-archlinux: ArchLinux](os/archlinux.md)
     - [:fontawesome-brands-android: Android](os/android.md)
 - **:fontawesome-solid-language: 编程语言**
-    - [:fontawesome-brands-markdown: Markdown](languages/markdown.md)
     - [:fontawesome-brands-html5: HTML](languages/html.md)
+    - [:fontawesome-brands-markdown: Markdown](languages/markdown.md)
+    - [Typst](languages/typst.md)
     - [$\LaTeX$](languages/latex.md)
     - [:fontawesome-brands-python: Python](languages/python.md)
 - **:fontawesome-solid-terminal: 工具软件**

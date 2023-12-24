@@ -6,6 +6,8 @@ comments: true
 
 > 翻译自 [Markdown Guide](https://www.markdownguide.org/basic-syntax/)
 
+Markdown 是 HTML 的超集，它兼容所有 HTML 语法，也可以通过简单的标记语法来格式化文本。
+
 ## 基本语法
 
 这些是 John Gruber 最初设计文件中概述的元素。所有 Markdown 应用程序都支持这些元素。
@@ -18,6 +20,15 @@ comments: true
 ##### H5
 ###### H6
 ```
+
+<div class="result">
+<h1>标题</h1>
+<h2>标题</h2>
+<h3>标题</h3>
+<h4>标题</h4>
+<h5>标题</h5>
+<h6>标题</h6>
+</div>
 
 ``` markdown title="粗体"
 **bold text**
