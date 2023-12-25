@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>计算机程序设计问卷调查结果</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">计算机程序设计问卷调查结果</h1>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    {% for col in results.columns %}
+                        <th>{{ col }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for i, row in results.iterrows() %}
+                    <tr>
+                        {% for col in results.columns %}
+                            {% set value = row[col] %}
+                            {% if value is iterable and value is not string %}
+                                {% set value = ", ".join(value) %}
+                            {% endif %}
+                            <td>{{ value }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% for question in questions %}
+            {% set qid = question["id"] %}
+            {% set qtype = question["type"] %}
+            {% set qtext = question["text"] %}
+            {% set qoptions = question["options"] %}
+            <!-- 单选题或多选题，显示饼图 -->
+            {% if qtype == "radio" or qtype == "checkbox" %}
+                <img src="./resource/{{ qid }}.png" alt="{{ qtext }}" class="img-fluid">
+            {% endif %}
+        {% endfor %}
+    </div>
+    <script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
