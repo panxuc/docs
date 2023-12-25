@@ -141,8 +141,12 @@ nav:
   - 主页: index.md
   - 作业:
       - coursework/index.md
-      - coursework/cpd1.md
-      - coursework/cpd2.md
+      - 计算机程序设计基础:
+          - coursework/cpd/README.md
+          - 加分作业：石头剪刀布: coursework/cpd/1/ex/README.md
+          - 加分作业：五子棋: coursework/cpd/2/ex/README.md
+          - 附加作业：调查问卷: coursework/cpd/3/ex/README.md
+          - 大作业：学生成绩管理系统: coursework/cpd/3/project/README.md
       - coursework/pdmes.md
       - 数据与算法:
           - coursework/daa/README.md
