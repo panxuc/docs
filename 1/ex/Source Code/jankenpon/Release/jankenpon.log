@@ -1,0 +1,21 @@
+﻿生成启动时间为 2022/12/20 12:12:24。
+     1>项目“C:\Users\Xuc\documents\visual studio 2013\Projects\jankenpon\jankenpon\jankenpon.vcxproj”在节点 2 上(Rebuild 个目标)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt main.c judge.c interface.c battle.c
+         main.c
+         judge.c
+         interface.c
+         battle.c
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Xuc\documents\visual studio 2013\Projects\jankenpon\Release\jankenpon.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Xuc\documents\visual studio 2013\Projects\jankenpon\Release\jankenpon.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Xuc\documents\visual studio 2013\Projects\jankenpon\Release\jankenpon.lib" /MACHINE:X86 /SAFESEH Release\main.obj
+         Release\judge.obj
+         Release\interface.obj
+         Release\battle.obj
+         正在生成代码
+         已完成代码的生成
+         jankenpon.vcxproj -> C:\Users\Xuc\documents\visual studio 2013\Projects\jankenpon\Release\jankenpon.exe
+     1>已完成生成项目“C:\Users\Xuc\documents\visual studio 2013\Projects\jankenpon\jankenpon\jankenpon.vcxproj”(Rebuild 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:01.23
