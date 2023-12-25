@@ -44,7 +44,7 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: white
+      primary: black
       accent: deep purple
       toggle:
         icon: material/brightness-7
@@ -172,6 +172,9 @@ nav:
           - 缺失数据恢复:
               - 题目: coursework/daa/prob/2023208.md
               - 答案: coursework/daa/ans/2023208.md
+          - 小明的火车旅行计划:
+              - 题目: coursework/daa/prob/2023209.md
+              - 答案: coursework/daa/ans/2023209.md
   - 项目:
       - projects/index.md
       - projects/eesastsd.md
