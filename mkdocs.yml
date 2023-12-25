@@ -14,6 +14,8 @@ theme:
     repo: fontawesome/brands/github
   language: zh
   custom_dir: overrides
+  font:
+    code: JetBrains Mono
   features:
     - announce.dismiss
     - content.action.edit
@@ -70,6 +72,8 @@ extra:
       link: https://panxuc.github.io/
     - icon: fontawesome/brands/steam
       link: https://steamcommunity.com/id/panxuc/
+extra_css:
+  - stylesheets/extra.css
 plugins:
   - search:
       lang:
@@ -89,8 +93,8 @@ markdown_extensions:
       slugify: !!python/name:pymdownx.slugs.uslugify
   - pymdownx.arithmatex:
       generic: true
-  - pymdownx.betterem:
-      smart_enable: all
+  # - pymdownx.betterem:
+  #     smart_enable: all
   - pymdownx.caret
   - pymdownx.critic
   - pymdownx.details
