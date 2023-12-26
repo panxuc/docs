@@ -5,7 +5,7 @@ site_description: Xuc's Docs
 repo_name: Panxuc/docs
 repo_url: https://github.com/Panxuc/docs
 edit_uri: edit/main/docs/
-copyright: Copyright &copy; 2023 Xuc Pan
+copyright: Copyright &copy; 2024 Xuc Pan
 theme:
   name: material
   logo: assets/icon.png
@@ -15,7 +15,6 @@ theme:
   language: zh
   custom_dir: overrides
   font:
-    text: Noto Sans SC
     code: JetBrains Mono
   features:
     - announce.dismiss
@@ -73,8 +72,6 @@ extra:
       link: https://panxuc.github.io/
     - icon: fontawesome/brands/steam
       link: https://steamcommunity.com/id/panxuc/
-extra_css:
-  - stylesheets/extra.css
 plugins:
   - mkdocs-video
   - search
@@ -135,6 +132,8 @@ extra_javascript:
   - javascripts/mathjax.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+extra_css:
+  - stylesheets/extra.css
 nav:
   - 主页: index.md
   - 作业:
@@ -145,6 +144,43 @@ nav:
           - 加分作业：五子棋: coursework/cpd/2/ex/README.md
           - 附加作业：调查问卷: coursework/cpd/3/ex/README.md
           - 大作业：学生成绩管理系统: coursework/cpd/3/project/README.md
+          - 平时作业:
+              - 计算机程序设计基础(1):
+                  - coursework/cpd/README.md
+                  - coursework/cpd/1/01/README.md
+                  - coursework/cpd/1/02/README.md
+                  - coursework/cpd/1/03/README.md
+                  - coursework/cpd/1/04/README.md
+                  - coursework/cpd/1/05/README.md
+                  - coursework/cpd/1/06/README.md
+                  - coursework/cpd/1/07/README.md
+                  - coursework/cpd/1/08/README.md
+                  - coursework/cpd/1/09/README.md
+                  - coursework/cpd/1/10/README.md
+                  - coursework/cpd/1/11/README.md
+                  - coursework/cpd/1/12/README.md
+                  - coursework/cpd/1/13/README.md
+                  - coursework/cpd/1/14/README.md
+                  - coursework/cpd/1/15/README.md
+              - 计算机程序设计基础(2)春季学期:
+                  - coursework/cpd/README.md
+                  - coursework/cpd/2/01/README.md
+                  - coursework/cpd/2/02/README.md
+                  - coursework/cpd/2/03/README.md
+                  - coursework/cpd/2/04/README.md
+                  - coursework/cpd/2/05/README.md
+                  - coursework/cpd/2/06/README.md
+                  - coursework/cpd/2/07/README.md
+                  - coursework/cpd/2/08/README.md
+                  - coursework/cpd/2/09/README.md
+                  - coursework/cpd/2/10/README.md
+                  - coursework/cpd/2/11/README.md
+                  - coursework/cpd/2/12/README.md
+              - 计算机程序设计基础(2)夏季学期:
+                  - coursework/cpd/README.md
+                  - coursework/cpd/3/01/README.md
+                  - coursework/cpd/3/02/README.md
+                  - coursework/cpd/3/03/README.md
       - coursework/pdmes.md
       - 数据与算法:
           - coursework/daa/README.md
@@ -200,10 +236,17 @@ nav:
       - os/android.md
   - 语言:
       - languages/index.md
-      - languages/html.md
+      - HTML:
+          - languages/html/index.md
+          - languages/html/basic.md
+          - languages/html/head.md
+          - languages/html/input.md
       - languages/markdown.md
       - languages/typst.md
-      - languages/latex.md
+      - LaTeX:
+          - languages/latex/index.md
+          - languages/latex/basic.md
+          - languages/latex/formula.md
       - Python:
           - languages/python/matplotlib.md
   - 软件:

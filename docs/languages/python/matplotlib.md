@@ -2,11 +2,9 @@
 comments: true
 ---
 
-# Python
+# Matplotlib
 
-## Matplotlib
-
-### 画图类型
+## 画图类型
 
 | 画图类型       | 函数                         | 示例                                                                                         |
 | -------------- | ---------------------------- | -------------------------------------------------------------------------------------------- |
@@ -27,7 +25,7 @@ comments: true
 | 饼图           | `pie(x)`                     | ![饼图](https://matplotlib.org/stable/_images/sphx_glr_pie_001.png){width="60"}              |
 | 累积图         | `ecdf(x)`                    | ![累积图](https://matplotlib.org/stable/_images/sphx_glr_ecdf_001.png){width="60"}           |
 
-### 初学者快速启动
+## 初学者快速启动
 
 导入模块
 
