@@ -15,6 +15,7 @@ theme:
   language: zh
   custom_dir: overrides
   font:
+    text: Noto Sans SC
     code: JetBrains Mono
   features:
     - announce.dismiss
@@ -46,14 +47,14 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: black
+      primary: deep purple
       accent: deep purple
       toggle:
         icon: material/brightness-7
         name: 浅色模式
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: black
+      primary: deep purple
       accent: deep orange
       toggle:
         icon: material/brightness-4
@@ -75,11 +76,11 @@ extra:
 extra_css:
   - stylesheets/extra.css
 plugins:
-  - search:
-      lang:
-        - zh
-      jieba_dict: dict.txt
+  - blog
+  - info
   - mkdocs-video
+  - search
+  - tags
 markdown_extensions:
   - abbr
   - admonition
