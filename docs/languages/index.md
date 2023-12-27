@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # 语言 - 目录
 
 - [:fontawesome-brands-html5: HTML](html/index.md)

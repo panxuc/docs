@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # 游戏 - 目录
 
 - [:mahjong: 麻将](mahjong.md)

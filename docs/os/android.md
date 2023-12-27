@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # Android
 
 [**:fontawesome-brands-android: 一个颠覆移动设备功能的平台**](https://www.android.com/)

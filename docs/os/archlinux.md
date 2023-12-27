@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # Arch Linux
 
 [**:simple-archlinux: 一个轻量的、灵活的 Linux 发行版**](https://archlinux.org/)

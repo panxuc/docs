@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # Matplotlib
 
 ## 画图类型

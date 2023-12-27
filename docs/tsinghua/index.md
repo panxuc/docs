@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # 清华生活 - 目录
 
 - [:fontawesome-brands-weixin: 社交媒体](socialmedia.md)

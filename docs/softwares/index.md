@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # 工具软件 - 目录
 
 - [:simple-vim: Vim](vim.md)

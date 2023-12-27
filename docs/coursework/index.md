@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # 课程作业 - 目录
 
 - [计算机程序设计基础](cpd/README.md)

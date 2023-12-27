@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # Vim
 
 > 翻译自 [NeoVim](https://neovim.io/doc/user/) 官方文档

@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # 课外项目 - 目录
 
 - [软件部](eesastsd.md)

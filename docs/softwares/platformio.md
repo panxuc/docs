@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # PlatformIO
 
 ## `platformio.ini`

@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # 社交媒体
 
 ## :fontawesome-solid-cube: 清华大学新媒体矩阵

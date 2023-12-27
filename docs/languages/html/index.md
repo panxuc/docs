@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # HTML
 
 超文本标记语言（**H**yper**T**ext **M**arkup **L**anguage，HTML）是一种用于创建网页的标准标记语言。

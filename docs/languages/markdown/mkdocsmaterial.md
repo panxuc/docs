@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # Material for MkDocs
 
 ## [:material-alert-outline: 警告](https://squidfunk.github.io/mkdocs-material/reference/admonitions/)

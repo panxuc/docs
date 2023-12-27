@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # 基本语法
 
 Markdown 原生语法其实很少，一共只有几种。

@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # 场所地点
 
 > 参见 [清华园新生使用指南](https://zhuanlan.zhihu.com/p/538195389)

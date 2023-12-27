@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # 软件部
 
 ## THUAI6（努力少女戏尔危） [:fontawesome-brands-github:](https://github.com/Panxuc/THUAI6_team)

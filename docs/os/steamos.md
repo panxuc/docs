@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # SteamOS
 
 [**:simple-steam: SteamOS**](https://store.steampowered.com/steamos)

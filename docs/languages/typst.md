@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # Typst
 
 Typst 是一种新的标记语言，它比 Markdown 更适合排版，比 LaTeX 更简单。当然，目前 Typst 还处于开发阶段，因此它的功能还不完善，但是它已经可以用于写作了。

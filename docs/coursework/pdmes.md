@@ -1,7 +1,3 @@
----
-comments: true
----
-
 # 电子系统专题设计与制作
 
 ## XPrism 智能眼镜 [:fontawesome-brands-github:](https://github.com/Panxuc/XPrism)
