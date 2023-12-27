@@ -2,269 +2,9 @@
 comments: true
 ---
 
-# Markdown
+# Material for MkDocs
 
-> 翻译自 [Markdown Guide](https://www.markdownguide.org/basic-syntax/)
-
-Markdown 是 HTML 的超集，它兼容所有 HTML 语法，也可以通过简单的标记语法来格式化文本。
-
-## 基本语法
-
-这些是 John Gruber 最初设计文件中概述的元素。所有 Markdown 应用程序都支持这些元素。
-
-``` markdown title="标题"
-# H1
-## H2
-### H3
-#### H4
-##### H5
-###### H6
-```
-
-<div class="result">
-<h1>标题</h1>
-<h2>标题</h2>
-<h3>标题</h3>
-<h4>标题</h4>
-<h5>标题</h5>
-<h6>标题</h6>
-</div>
-
-``` markdown title="粗体"
-**bold text**
-```
-
-<div class="result" markdown>
-
-**bold text**
-
-</div>
-
-``` markdown title="斜体"
-*italicized text*
-```
-
-<div class="result" markdown>
-
-*italicized text*
-
-</div>
-
-``` markdown title="引用"
-> blockquote
-```
-
-<div class="result" markdown>
-
-> blockquote
-
-</div>
-
-``` markdown title="有序列表"
-1. First item
-2. Second item
-3. Third item
-```
-
-<div class="result" markdown>
-
-1. First item
-2. Second item
-3. Third item
-
-</div>
-
-``` markdown title="无序列表"
-- First item
-- Second item
-- Third item
-```
-
-<div class="result" markdown>
-
-- First item
-- Second item
-- Third item
-
-</div>
-
-``` markdown title="代码"
-`code`
-```
-
-<div class="result" markdown>
-
-`code`
-
-</div>
-
-``` markdown title="水平线"
----
-```
-
-<div class="result" markdown>
-
----
-
-</div>
-
-``` markdown title="链接"
-[Markdown Guide](https://www.markdownguide.org)
-```
-
-<div class="result" markdown>
-
-[Markdown Guide](https://www.markdownguide.org)
-
-</div>
-
-``` markdown title="图片"
-![alt text](https://www.markdownguide.org/assets/images/tux.png)
-```
-
-<div class="result" markdown>
-
-![alt text](https://www.markdownguide.org/assets/images/tux.png)
-
-</div>
-
-## 扩展语法
-
-这些元素通过添加额外的特性扩展了基本语法。并非所有 Markdown 应用程序都支持这些元素。
-
-``` markdown title="表格"
-| Syntax    | Description |
-| --------- | ----------- |
-| Header    | Title       |
-| Paragraph | Text        |
-```
-
-<div class="result" markdown>
-
-| Syntax    | Description |
-| --------- | ----------- |
-| Header    | Title       |
-| Paragraph | Text        |
-
-</div>
-
-```` markdown title="代码块"
-```
-{
-  "firstName": "John",
-  "lastName": "Smith",
-  "age": 25
-}
-```
-````
-
-<div class="result" markdown>
-
-```
-{
-  "firstName": "John",
-  "lastName": "Smith",
-  "age": 25
-}
-```
-
-</div>
-
-``` markdown title="脚注"
-Here's a sentence with a footnote. [^1]
-
-[^1]: This is the footnote.
-```
-
-<div class="result" markdown>
-
-Here's a sentence with a footnote. [^1]
-
-[:octicons-arrow-down-24: 前往脚注](#fn:1)
-
-[^1]: This is the footnote.
-
-</div>
-
-``` markdown title="定义列表"
-term
-: definition
-```
-
-<div class="result" markdown>
-
-term
-: definition
-
-</div>
-
-``` markdown title="删除线"
-~~The world is flat.~~
-```
-
-<div class="result" markdown>
-
-~~The world is flat.~~
-
-</div>
-
-``` markdown title="任务列表"
-- [x] Write the press release
-- [ ] Update the website
-- [ ] Contact the media
-```
-
-<div class="result" markdown>
-
-- [x] Write the press release
-- [ ] Update the website
-- [ ] Contact the media
-
-</div>
-
-``` markdown title="表情符号"
-That is so funny! :joy:
-```
-
-<div class="result" markdown>
-
-That is so funny! :joy:
-
-</div>
-
-``` markdown title="高亮"
-I need to highlight these ==very important words==.
-```
-
-<div class="result" markdown>
-
-I need to highlight these ==very important words==.
-
-</div>
-
-``` markdown title="下标"
-H~2~O
-```
-
-<div class="result" markdown>
-
-H~2~O
-
-</div>
-
-``` markdown title="上标"
-X^2^
-```
-
-<div class="result" markdown>
-
-X^2^
-
-</div>
-
-## Material for MkDocs
-
-### [:material-alert-outline: 警告](https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
+## [:material-alert-outline: 警告](https://squidfunk.github.io/mkdocs-material/reference/admonitions/)
 
 ``` yaml
 markdown_extensions:
@@ -455,7 +195,7 @@ markdown_extensions:
 
 </div>
 
-### [:material-plus-circle: 注释](https://squidfunk.github.io/mkdocs-material/reference/annotations/)
+## [:material-plus-circle: 注释](https://squidfunk.github.io/mkdocs-material/reference/annotations/)
 
 ``` yaml
 markdown_extensions:
@@ -583,7 +323,7 @@ Lorem ipsum dolor sit amet, (1) consectetur adipiscing elit.
 
 </div>
 
-### [:material-button-cursor: 按钮](https://squidfunk.github.io/mkdocs-material/reference/buttons/)
+## [:material-button-cursor: 按钮](https://squidfunk.github.io/mkdocs-material/reference/buttons/)
 
 ``` yaml
 markdown_extensions:
@@ -634,7 +374,7 @@ markdown_extensions:
 
 </div>
 
-### [:material-code-json: 代码块](https://squidfunk.github.io/mkdocs-material/reference/code-blocks/)
+## [:material-code-json: 代码块](https://squidfunk.github.io/mkdocs-material/reference/code-blocks/)
 
 ``` yaml
 markdown_extensions:
@@ -795,7 +535,7 @@ def bubble_sort(items):
 
     </div>
 
-### [:material-tab: 内容标签](https://squidfunk.github.io/mkdocs-material/reference/content-tabs/)
+## [:material-tab: 内容标签](https://squidfunk.github.io/mkdocs-material/reference/content-tabs/)
 
 ``` yaml
 markdown_extensions:
@@ -926,7 +666,7 @@ markdown_extensions:
 
 </div>
 
-### [:material-table-edit: 数据表格](https://squidfunk.github.io/mkdocs-material/reference/data-tables/)
+## [:material-table-edit: 数据表格](https://squidfunk.github.io/mkdocs-material/reference/data-tables/)
 
 ``` yaml
 markdown_extensions:
@@ -1011,7 +751,7 @@ markdown_extensions:
 
     </div>
 
-### [:material-graph-outline: 图表](https://squidfunk.github.io/mkdocs-material/reference/diagrams/)
+## [:material-graph-outline: 图表](https://squidfunk.github.io/mkdocs-material/reference/diagrams/)
 
 ``` yaml
 markdown_extensions:
@@ -1176,7 +916,7 @@ classDiagram
 
 </div>
 
-### [:material-format-align-bottom: 脚注](https://squidfunk.github.io/mkdocs-material/reference/footnotes/)
+## [:material-format-align-bottom: 脚注](https://squidfunk.github.io/mkdocs-material/reference/footnotes/)
 
 ``` yaml
 markdown_extensions:
@@ -1223,7 +963,7 @@ Lorem ipsum[^2] dolor sit amet, consectetur adipiscing elit.[^3]
 
 </div>
 
-### [:material-format-font: 格式化](https://squidfunk.github.io/mkdocs-material/reference/formatting/)
+## [:material-format-font: 格式化](https://squidfunk.github.io/mkdocs-material/reference/formatting/)
 
 ``` yaml
 markdown_extensions:
@@ -1298,3 +1038,218 @@ tags on separate lines and adding new lines between the tags and the content.
 ++ctrl+alt+del++
 
 </div>
+
+## [:material-view-grid-plus: 栅格](https://squidfunk.github.io/mkdocs-material/reference/grids/)
+
+``` yaml
+markdown_extensions: 
+  - attr_list
+  - md_in_html
+```
+
+``` markdown title="卡片"
+<div class="grid cards" markdown>
+
+- :fontawesome-brands-html5: __HTML__ for content and structure
+- :fontawesome-brands-js: __JavaScript__ for interactivity
+- :fontawesome-brands-css3: __CSS__ for text running out of boxes
+- :fontawesome-brands-internet-explorer: __Internet Explorer__ ... huh?
+
+</div>
+```
+
+<div class="result" markdown>
+
+<div class="grid cards" markdown>
+
+- :fontawesome-brands-html5: __HTML__ for content and structure
+- :fontawesome-brands-js: __JavaScript__ for interactivity
+- :fontawesome-brands-css3: __CSS__ for text running out of boxes
+- :fontawesome-brands-internet-explorer: __Internet Explorer__ ... huh?
+
+</div>
+
+</div>
+
+``` markdown title="复杂的卡片"
+<div class="grid cards" markdown>
+
+-   :material-clock-fast:{ .lg .middle } __Set up in 5 minutes__
+
+    ---
+
+    Install [`mkdocs-material`](#) with [`pip`](#) and get up
+    and running in minutes
+
+    [:octicons-arrow-right-24: Getting started](#)
+
+-   :fontawesome-brands-markdown:{ .lg .middle } __It's just Markdown__
+
+    ---
+
+    Focus on your content and generate a responsive and searchable static site
+
+    [:octicons-arrow-right-24: Reference](#)
+
+-   :material-format-font:{ .lg .middle } __Made to measure__
+
+    ---
+
+    Change the colors, fonts, language, icons, logo and more with a few lines
+
+    [:octicons-arrow-right-24: Customization](#)
+
+-   :material-scale-balance:{ .lg .middle } __Open Source, MIT__
+
+    ---
+
+    Material for MkDocs is licensed under MIT and available on [GitHub]
+
+    [:octicons-arrow-right-24: License](#)
+
+</div>
+```
+
+<div class="result" markdown>
+
+<div class="grid cards" markdown>
+
+-   :material-clock-fast:{ .lg .middle } __Set up in 5 minutes__
+
+    ---
+
+    Install [`mkdocs-material`](#) with [`pip`](#) and get up
+    and running in minutes
+
+    [:octicons-arrow-right-24: Getting started](#)
+
+-   :fontawesome-brands-markdown:{ .lg .middle } __It's just Markdown__
+
+    ---
+
+    Focus on your content and generate a responsive and searchable static site
+
+    [:octicons-arrow-right-24: Reference](#)
+
+-   :material-format-font:{ .lg .middle } __Made to measure__
+
+    ---
+
+    Change the colors, fonts, language, icons, logo and more with a few lines
+
+    [:octicons-arrow-right-24: Customization](#)
+
+-   :material-scale-balance:{ .lg .middle } __Open Source, MIT__
+
+    ---
+
+    Material for MkDocs is licensed under MIT and available on [GitHub]
+
+    [:octicons-arrow-right-24: License](#)
+
+</div>
+
+</div>
+
+``` markdown title="块状卡片"
+<div class="grid" markdown>
+
+:fontawesome-brands-html5: __HTML__ for content and structure
+{ .card }
+
+:fontawesome-brands-js: __JavaScript__ for interactivity
+{ .card }
+
+:fontawesome-brands-css3: __CSS__ for text running out of boxes
+{ .card }
+
+> :fontawesome-brands-internet-explorer: __Internet Explorer__ ... huh?
+
+</div>
+```
+
+<div class="result" markdown>
+
+<div class="grid" markdown>
+
+:fontawesome-brands-html5: __HTML__ for content and structure
+{ .card }
+
+:fontawesome-brands-js: __JavaScript__ for interactivity
+{ .card }
+
+:fontawesome-brands-css3: __CSS__ for text running out of boxes
+{ .card }
+
+> :fontawesome-brands-internet-explorer: __Internet Explorer__ ... huh?
+
+</div>
+
+</div>
+
+```` markdown title="普通网格"
+<div class="grid" markdown>
+
+=== "Unordered list"
+
+    * Sed sagittis eleifend rutrum
+    * Donec vitae suscipit est
+    * Nulla tempor lobortis orci
+
+=== "Ordered list"
+
+    1. Sed sagittis eleifend rutrum
+    2. Donec vitae suscipit est
+    3. Nulla tempor lobortis orci
+
+``` title="Content tabs"
+=== "Unordered list"
+
+    * Sed sagittis eleifend rutrum
+    * Donec vitae suscipit est
+    * Nulla tempor lobortis orci
+
+=== "Ordered list"
+
+    1. Sed sagittis eleifend rutrum
+    2. Donec vitae suscipit est
+    3. Nulla tempor lobortis orci
+```
+
+</div>
+````
+
+<div class="result" markdown>
+
+<div class="grid" markdown>
+
+=== "Unordered list"
+
+    * Sed sagittis eleifend rutrum
+    * Donec vitae suscipit est
+    * Nulla tempor lobortis orci
+
+=== "Ordered list"
+
+    1. Sed sagittis eleifend rutrum
+    2. Donec vitae suscipit est
+    3. Nulla tempor lobortis orci
+
+``` title="Content tabs"
+=== "Unordered list"
+
+    * Sed sagittis eleifend rutrum
+    * Donec vitae suscipit est
+    * Nulla tempor lobortis orci
+
+=== "Ordered list"
+
+    1. Sed sagittis eleifend rutrum
+    2. Donec vitae suscipit est
+    3. Nulla tempor lobortis orci
+```
+
+</div>
+
+</div>
+

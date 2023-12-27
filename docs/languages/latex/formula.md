@@ -576,7 +576,7 @@ x^2, x_2
 | `\perp`       | $\perp$       | `\parallel` | $\parallel$ |               |               |
 | `\mid`        | $\mid$        | `\bumpeq`   | $\bumpeq$   |               |               |
 
-## 否定
+### 否定
 
 | LaTeX    | $\LaTeX$ | LaTeX    | $\LaTeX$ | LaTeX        | $\LaTeX$     |
 | -------- | -------- | -------- | -------- | ------------ | ------------ |

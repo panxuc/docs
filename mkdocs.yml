@@ -241,7 +241,10 @@ nav:
           - languages/html/basic.md
           - languages/html/head.md
           - languages/html/input.md
-      - languages/markdown.md
+      - Markdown:
+          - languages/markdown/index.md
+          - languages/markdown/basic.md
+          - languages/markdown/mkdocsmaterial.md
       - languages/typst.md
       - LaTeX:
           - languages/latex/index.md
