@@ -447,7 +447,7 @@ Markdown 支持使用 HTML 语法。
 <div class="result" markdown>
 这是一段使用 HTML 语法的文本。
 
-<video src="https://docs.panxuc.com/assets/test.mp4" controls="controls" width="100%"></video>
+<video src="https://docs.panxuc.com/assets/videos/test.mp4" controls="controls" width="100%"></video>
 
 </div>
 ```
@@ -458,7 +458,7 @@ Markdown 支持使用 HTML 语法。
 
 这是一段使用 HTML 语法的文本。
 
-<video src="https://docs.panxuc.com/assets/test.mp4" controls="controls" width="100%"></video>
+<video src="https://docs.panxuc.com/assets/videos/test.mp4" controls="controls" width="100%"></video>
 
 </div>
 
