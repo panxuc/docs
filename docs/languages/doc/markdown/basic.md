@@ -440,22 +440,15 @@ Markdown 使用 `[toc]` 来插入目录。
 Markdown 支持使用 HTML 语法。
 
 ```markdown title="HTML"
-<div class="result" markdown>
-这是一段使用 HTML 语法的文本。
+<p>这是一段使用 <strong>HTML</strong> <em>语法</em>的<span lang="ja">文本<span lang="ja">。</p>
 
 <video src="https://docs.panxuc.com/assets/videos/test.mp4" controls="controls" width="100%"></video>
-
-</div>
 ```
 
 <div class="result" markdown>
 
-<div class="result" markdown>
-
-这是一段使用 HTML 语法的文本。
+<p>这是一段使用 <strong>HTML</strong> <em>语法</em>的<span lang="ja">文本<span lang="ja">。</p>
 
 <video src="https://docs.panxuc.com/assets/videos/test.mp4" controls="controls" width="100%"></video>
-
-</div>
 
 </div>

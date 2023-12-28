@@ -135,7 +135,7 @@ commit 5b6
 Author: Your Name <email@example.com>
 Date:   Mon Oct 18 21:00:00 2021 +0800
 
-    提交说明
+        提交说明
 ```
 
 如果想要查看每次提交的简略信息，可以使用 `git log --pretty=oneline` 命令或 `git log --oneline` 命令。

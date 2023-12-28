@@ -85,7 +85,6 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
-      slugify: !!python/name:pymdownx.slugs.uslugify
   - pymdownx.arithmatex:
       generic: true
   # - pymdownx.betterem:
@@ -110,6 +109,7 @@ markdown_extensions:
       strict: false
       camel_case: false
   - pymdownx.magiclink:
+      normalize_issue_symbols: true
       repo_url_shorthand: true
       user: Panxuc
       repo: docs
@@ -125,6 +125,10 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
+      combine_header_slug: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
