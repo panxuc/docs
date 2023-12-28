@@ -22,22 +22,22 @@ Windows 11 在简体中文环境下默认使用 `GBK` 编码，这会导致一�
 
 ??? note "关于简体中文环境下的 Windows 上的 C++ 语言"
 
-  在上述操作后，您可能发现您编写的 C++ 程序无法正常读取中文。这是因为 `cin` 读取的内容默认为 `GBK` 编码，您可以使用以下代码将其改为 `UTF-8` 编码：
+    在上述操作后，您可能发现您编写的 C++ 程序无法正常读取中文。这是因为 `cin` 读取的内容默认为 `GBK` 编码，您可以使用以下代码将其改为 `UTF-8` 编码：
 
-  ``` cpp
-  #include <iostream>
-  #include <io.h>
-  #include <fcntl.h>
-  using namespace std;
-  int main() {
-    _setmode(_fileno(stdin), _O_U16TEXT);
-    _setmode(_fileno(stdout), _O_U16TEXT);
-    wstring s;
-    wcin >> s;
-    wcout << s << endl;
-    return 0;
-  }
-  ```
+    ``` cpp
+    #include <iostream>
+    #include <io.h>
+    #include <fcntl.h>
+    using namespace std;
+    int main() {
+      _setmode(_fileno(stdin), _O_U16TEXT);
+      _setmode(_fileno(stdout), _O_U16TEXT);
+      wstring s;
+      wcin >> s;
+      wcout << s << endl;
+      return 0;
+    }
+    ```
 
 总之，由于 Microsoft 的愚蠢的本地化设计，您可能需要在 `GBK` 和 `UTF-8` 之间来回切换。所以，为了避免不必要的麻烦，我建议您使用英文环境。
 

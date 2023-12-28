@@ -28,40 +28,40 @@ Steam Deck 的存储空间是可以扩展的，它有一个 microSD 卡槽。但
 
 ??? note "安装步骤"
 
-  拔掉 Steam Deck 的所有连接线和 SD 卡。
-  
-  ![steamdeck_ssd_1](../../assets/images/steamdeck_ssd_1.jpg)
+    拔掉 Steam Deck 的所有连接线和 SD 卡。
+    
+    ![steamdeck_ssd_1](../../assets/images/steamdeck_ssd_1.jpg)
 
-  移除后盖螺丝，拆下 Steam Deck 的背面盖。
+    移除后盖螺丝，拆下 Steam Deck 的背面盖。
 
-  ![steamdeck_ssd_2](../../assets/images/steamdeck_ssd_2.jpg)
-  ![steamdeck_ssd_3](../../assets/images/steamdeck_ssd_3.jpg)
-  ![steamdeck_ssd_4](../../assets/images/steamdeck_ssd_4.jpg)
+    ![steamdeck_ssd_2](../../assets/images/steamdeck_ssd_2.jpg)
+    ![steamdeck_ssd_3](../../assets/images/steamdeck_ssd_3.jpg)
+    ![steamdeck_ssd_4](../../assets/images/steamdeck_ssd_4.jpg)
 
-  === "银色防护板"
-  
-    揭开防护板上的贴纸，拆下银色防护板的螺丝，拆下银色防护板。
+    === "银色防护板"
+    
+        揭开防护板上的贴纸，拆下银色防护板的螺丝，拆下银色防护板。
 
-    ![steamdeck_ssd_5](../../assets/images/steamdeck_ssd_5.jpg)
-    ![steamdeck_ssd_6_1](../../assets/images/steamdeck_ssd_6_1.jpg)
-    ![steamdeck_ssd_7_1](../../assets/images/steamdeck_ssd_7_1.jpg)
+        ![steamdeck_ssd_5](../../assets/images/steamdeck_ssd_5.jpg)
+        ![steamdeck_ssd_6_1](../../assets/images/steamdeck_ssd_6_1.jpg)
+        ![steamdeck_ssd_7_1](../../assets/images/steamdeck_ssd_7_1.jpg)
 
-  === "黑色防护板"
+    === "黑色防护板"
 
-    拆下黑色防护板的螺丝，拆下黑色防护板。
+        拆下黑色防护板的螺丝，拆下黑色防护板。
 
-    ![steamdeck_ssd_6_2](../../assets/images/steamdeck_ssd_6_2.jpg)
-    ![steamdeck_ssd_7_2](../../assets/images/steamdeck_ssd_7_2.jpg)
+        ![steamdeck_ssd_6_2](../../assets/images/steamdeck_ssd_6_2.jpg)
+        ![steamdeck_ssd_7_2](../../assets/images/steamdeck_ssd_7_2.jpg)
 
-  断开电池排线。
+    断开电池排线。
 
-  ![steamdeck_ssd_8](../../assets/images/steamdeck_ssd_8.jpg)
+    ![steamdeck_ssd_8](../../assets/images/steamdeck_ssd_8.jpg)
 
-  更换 SSD。
+    更换 SSD。
 
-  ![steamdeck_ssd_9](../../assets/images/steamdeck_ssd_9.jpg)
+    ![steamdeck_ssd_9](../../assets/images/steamdeck_ssd_9.jpg)
 
-  把所有东西装回去。
+    把所有东西装回去。
 
 更换完 SSD 后，需要重新安装 SteamOS。遵循 [Steam Deck 恢复指示说明](https://help.steampowered.com/zh-cn/faqs/view/1B71-EDF2-EB6D-2BB3) 安装即可。
 
@@ -75,25 +75,25 @@ Decky Loader 是 Steam Deck 的自制插件启动器。它可用于设置菜单�
 
 ???+ note "安装步骤"
 
-  进入 Steam Deck 设置，打开开发者模式，并在开发者模式中打开 CEF 远程调试。
+    进入 Steam Deck 设置，打开开发者模式，并在开发者模式中打开 CEF 远程调试。
 
-  重启 Steam Deck。
+    重启 Steam Deck。
 
-  切换到 SteamOS 桌面模式。
+    切换到 SteamOS 桌面模式。
 
-  打开 Konsole，设置账户密码。
+    打开 Konsole，设置账户密码。
 
-  ``` bash
-  passwd
-  ```
+    ``` bash
+    passwd
+    ```
 
-  安装 Decky Loader。
+    安装 Decky Loader。
 
-  ``` bash
-  curl -L http://dl.ohmydeck.net | sh
-  ```
+    ``` bash
+    curl -L http://dl.ohmydeck.net | sh
+    ```
 
-  安装完成后，回到游戏模式，按下右侧摇杆下的快捷按钮，就可以打开 Decky Loader。
+    安装完成后，回到游戏模式，按下右侧摇杆下的快捷按钮，就可以打开 Decky Loader。
 
 ### ToMoon
 
@@ -103,8 +103,8 @@ Decky Loader 是 Steam Deck 的自制插件启动器。它可用于设置菜单�
 
 ???+ note "安装步骤"
 
-  在安装 Decky Loader 的基础上，在 Konsole 中执行以下命令。
+    在安装 Decky Loader 的基础上，在 Konsole 中执行以下命令。
 
-  ``` bash
-  curl -L http://i.ohmydeck.net | sh
-  ```
+    ``` bash
+    curl -L http://i.ohmydeck.net | sh
+    ```

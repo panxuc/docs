@@ -77,7 +77,7 @@ cfdisk /dev/<硬盘名称>
 
 ???+ warning "关于 EFI 系统分区"
 
-  只有在分区步骤中创建 EFI 系统分区时才需要格式化。如果这个磁盘上已经有一个 EFI 系统分区了，将它重新格式化会破坏其他已安装操作系统的引导加载程序。
+    只有在分区步骤中创建 EFI 系统分区时才需要格式化。如果这个磁盘上已经有一个 EFI 系统分区了，将它重新格式化会破坏其他已安装操作系统的引导加载程序。
 
 格式化分区。
 
@@ -208,16 +208,16 @@ reboot
 
 === "KDE Plasma"
 
-  ``` bash
-  pacman -S xorg plasma sddm konsole dolphin kate ark okular
-  systemctl enable sddm
-  ```
+    ``` bash
+    pacman -S xorg plasma sddm konsole dolphin kate ark okular
+    systemctl enable sddm
+    ```
 === "GNOME"
 
-  ``` bash
-  pacman -S xorg gnome
-  systemctl enable gdm
-  ```
+    ``` bash
+    pacman -S xorg gnome
+    systemctl enable gdm
+    ```
 
 #### 添加 `archlinuxcn` 源
 
@@ -239,23 +239,23 @@ reboot
 
 === "`yay`"
 
-  ``` sh
-  git clone https://aur.archlinux.org/yay
-  cd yay
-  makepkg -si
-  ```
+    ``` sh
+    git clone https://aur.archlinux.org/yay
+    cd yay
+    makepkg -si
+    ```
 
-  中国大陆读者请自行解决网络问题（如果有）。
+    中国大陆读者请自行解决网络问题（如果有）。
 
 === "`paru`"
 
-  先添加 `archlinuxcn` 源。
+    先添加 `archlinuxcn` 源。
 
-  ``` sh
-  pacman -S paru
-  ```
+    ``` sh
+    pacman -S paru
+    ```
 
-  显然此方法比安装 `yay` 不知道高到哪里去了。
+    显然此方法比安装 `yay` 不知道高到哪里去了。
 
 #### 设置 `GRUB` 引导
 
