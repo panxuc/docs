@@ -1,13 +1,41 @@
 # 语言 - 目录
 
-- [:fontawesome-brands-html5: HTML](html/index.md)
-    - [基本元素](html/basic.md)
-    - [`<head>` 头部](html/head.md)
-    - [`<input>` 输入](html/input.md)
-- [:fontawesome-brands-markdown: Markdown](markdown.md)
-- [Typst](typst.md)
-- [$\LaTeX$](latex/index.md)
-    - [基本文字处理](latex/basic.md)
-    - [公式](latex/formula.md)
-- [:fontawesome-brands-python: Python](python/index.md)
-    - [Matplotlib](python/matplotlib.md)
+- [:material-regex: 正则表达式](regex.md)
+- :material-file-document: 文档编辑
+    - [:fontawesome-brands-markdown: Markdown](doc/markdown/index.md)
+        - [基本语法](doc/markdown/basic.md)
+        - [:simple-materialformkdocs: Material for MkDocs](doc/markdown/mkdocsmaterial.md)
+        - :simple-docusaurus: Docusaurus
+    - [Typst](doc/typst.md)
+    - [$\LaTeX$](doc/latex/index.md)
+        - [基本文字处理](doc/latex/basic.md)
+        - [公式](doc/latex/formula.md)
+- :fontawesome-brands-chrome: 网页开发
+    - [:fontawesome-brands-html5: HTML](web/html/index.md)
+        - [基本元素](web/html/basic.md)
+        - [`<head>` 头部](web/html/head.md)
+        - [`<input>` 输入](web/html/input.md)
+    - :fontawesome-brands-css3: CSS
+        - :fontawesome-brands-bootstrap: Bootstrap
+        - :simple-tailwindcss: Tailwind CSS
+    - :simple-javascript: JavaScript
+        - :simple-typescript: TypeScript
+        - :fontawesome-brands-node-js: Node.js
+        - :fontawesome-brands-react: React
+- :fontawesome-solid-code: 编程语言
+    - :simple-cplusplus: C & C++
+        - STL
+        - :simple-gnu: GCC
+        - :simple-cmake: CMake
+    - :simple-csharp: C#
+        - :simple-dotnet: WPF
+        - :simple-xaml: MAUI
+        - :simple-nuget: NuGet
+        - :fontawesome-brands-unity: Unity
+        - :simple-godotengine: Godot
+    - Matlab
+    - :fontawesome-brands-python: Python
+        - [Matplotlib](code/python/matplotlib.md)
+        - :simple-numpy: NumPy
+        - :simple-pandas: Pandas
+        - :simple-scipy: SciPy

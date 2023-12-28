@@ -230,30 +230,37 @@ nav:
       - tsinghua/locations.md
   - 系统:
       - os/index.md
-      - os/windows11.md
-      - os/archlinux.md
-      - os/steamos.md
+      - Windows:
+          - os/windows/windows11.md
+      - Linux:
+          - os/linux/archlinux.md
+          - os/linux/steamos.md
       - os/android.md
   - 语言:
       - languages/index.md
-      - HTML:
-          - languages/html/index.md
-          - languages/html/basic.md
-          - languages/html/head.md
-          - languages/html/input.md
-      - Markdown:
-          - languages/markdown/index.md
-          - languages/markdown/basic.md
-          - languages/markdown/mkdocsmaterial.md
-      - languages/typst.md
-      - LaTeX:
-          - languages/latex/index.md
-          - languages/latex/basic.md
-          - languages/latex/formula.md
-      - Python:
-          - languages/python/matplotlib.md
+      - languages/regex.md
+      - 文档编辑:
+          - Markdown:
+              - languages/doc/markdown/index.md
+              - languages/doc/markdown/basic.md
+              - languages/doc/markdown/mkdocsmaterial.md
+          - languages/doc/typst.md
+          - LaTeX:
+              - languages/doc/latex/index.md
+              - languages/doc/latex/basic.md
+              - languages/doc/latex/formula.md
+      - 网页开发:
+          - HTML:
+              - languages/web/html/index.md
+              - languages/web/html/basic.md
+              - languages/web/html/head.md
+              - languages/web/html/input.md
+      - 编程语言:
+          - Python:
+              - languages/code/python/matplotlib.md
   - 软件:
       - softwares/index.md
+      - softwares/git.md
       - softwares/vim.md
       - softwares/platformio.md
   - 游戏:
