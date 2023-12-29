@@ -221,17 +221,31 @@ nav:
           - 小明的火车旅行计划:
               - 题目: coursework/daa/prob/2023209.md
               - 答案: coursework/daa/ans/2023209.md
-  - 项目:
-      - projects/index.md
-      - projects/eesastsd.md
-      - projects/eesasthd.md
-  - 清华:
-      - tsinghua/index.md
-      - tsinghua/socialmedia.md
-      - tsinghua/utilities.md
-      - tsinghua/network.md
-      - tsinghua/courses.md
-      - tsinghua/locations.md
+  - 文档:
+      - doc/index.md
+      - Markdown:
+          - doc/markdown/index.md
+          - doc/markdown/basic.md
+          - doc/markdown/mkdocsmaterial.md
+      - doc/typst.md
+      - LaTeX:
+          - doc/latex/index.md
+          - doc/latex/basic.md
+          - doc/latex/formula.md
+  - 网页:
+      - web/index.md
+      - HTML:
+          - web/html/index.md
+          - web/html/basic.md
+          - web/html/head.md
+          - web/html/input.md
+  - 建站:
+      - site/index.md
+  - 编程:
+      - code/index.md
+      - code/regex.md
+      - Python:
+          - code/python/matplotlib.md
   - 系统:
       - os/index.md
       - Windows:
@@ -240,40 +254,18 @@ nav:
           - os/linux/archlinux.md
           - os/linux/steamos.md
       - os/android.md
-  - 语言:
-      - languages/index.md
-      - languages/regex.md
-      - 文档编辑:
-          - Markdown:
-              - languages/doc/markdown/index.md
-              - languages/doc/markdown/basic.md
-              - languages/doc/markdown/mkdocsmaterial.md
-          - languages/doc/typst.md
-          - LaTeX:
-              - languages/doc/latex/index.md
-              - languages/doc/latex/basic.md
-              - languages/doc/latex/formula.md
-      - 网页开发:
-          - HTML:
-              - languages/web/html/index.md
-              - languages/web/html/basic.md
-              - languages/web/html/head.md
-              - languages/web/html/input.md
-      - 编程语言:
-          - Python:
-              - languages/code/python/matplotlib.md
   - 软件:
-      - softwares/index.md
-      - softwares/git.md
-      - softwares/vim.md
-      - softwares/platformio.md
+      - software/index.md
+      - software/git.md
+      - software/vim.md
+      - software/platformio.md
   - 游戏:
-      - games/index.md
-      - games/mahjong.md
-      - games/aceattorney.md
-      - games/persona.md
-      - Galgames:
-          - games/galgames/yuzusoft.md
+      - game/index.md
+      - game/mahjong.md
+      - game/aceattorney.md
+      - game/persona.md
+      - Galgame:
+          - game/galgame/yuzusoft.md
   - 关于:
       - about/index.md
       - about/license.md
