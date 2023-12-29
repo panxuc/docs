@@ -10,6 +10,7 @@
 - :fontawesome-brands-linux: Linux
     - :simple-alpinelinux: Alpine Linux
     - [:simple-archlinux: Arch Linux](linux/archlinux.md)
+    - :fontawesome-brands-debian: Debian
     - [:fontawesome-brands-steam: SteamOS](linux/steamos.md)
     - :fontawesome-brands-ubuntu: Ubuntu
 - :simple-ios: iOS

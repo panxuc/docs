@@ -1,5 +1,7 @@
 # Arch Linux
 
+Arch Linux（Arch: /ɑːrtʃ/）是一个较为热门的 Linux 发行版，它致力于通过滚动更新来提供大多数软件的最新稳定版本。默认安装是一个最小的基本系统，由用户自行添加需要的软件，故而有较高的自由度，可以让用户充分定制系统。它使用的 pacman 包管理器可以方便地安装、更新和删除软件包。
+
 ## 安装 Arch Linux
 
 首先需要下载 Arch Linux 镜像。由于网络原因，官网下载速度堪忧，故推荐使用清华大学开源软件镜像站下载。
@@ -237,7 +239,7 @@ reboot
 
 #### 添加 `AUR` 源
 
-=== "`yay`"
+=== "yay"
 
     ``` sh
     git clone https://aur.archlinux.org/yay
@@ -247,7 +249,7 @@ reboot
 
     中国大陆读者请自行解决网络问题（如果有）。
 
-=== "`paru`"
+=== "paru"
 
     先添加 `archlinuxcn` 源。
 

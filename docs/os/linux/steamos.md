@@ -1,10 +1,8 @@
 # SteamOS
 
-以下内容默认是运行 SteamOS 3.0 的 Steam Deck 的介绍。
+Steam Deck 是 Valve 公司开发的掌上游戏机，它运行的是 [:simple-archlinux: Arch Linux](archlinux.md) 的衍生版 SteamOS 3.0。
 
-Steam Deck 是 Valve 公司开发的掌上游戏机，它运行 SteamOS 3.0。
-
-Steam Deck 有 3 种型号，分别是 64GB eMMC、256GB NVMe SSD 和 512GB NVMe SSD，售价分别为 399 美元、529 美元和 649 美元。事实上，完全没有必要购买更大空间的机型。因为 Steam Deck 的存储空间是可以扩展的，它有一个 microSD 卡槽。但是，这个卡槽的速度不是很理想。你可以自己购买一块 M.2 2230 SSD（如西部数据 SN740），然后拆开 Steam Deck，将这块 SSD 安装到 Steam Deck 上。这样，你就可以拥有更大的存储空间，而且速度也会更快。
+Steam Deck 有 3 种型号，分别是 64GB eMMC、256GB NVMe SSD 和 512GB NVMe SSD，售价分别为 399 美元、529 美元和 649 美元。事实上，完全没有必要购买更大空间的机型。因为 Steam Deck 的存储空间是可以扩展的。它有一个 microSD 卡槽，但是这个卡槽的速度不是很理想。你可以自己购买一块 M.2 2230 SSD（如西部数据 SN740），然后拆开 Steam Deck，将这块 SSD 安装到 Steam Deck 上。这样，你就可以拥有更大的存储空间，而且速度也会更快。
 
 Steam Deck 出厂时搭载的系统是 SteamOS 3.0，但是你也可以选择安装 Windows 11。可是，这样就失去了折腾机器的乐趣，所以不建议这样做。
 
@@ -18,7 +16,7 @@ Steam Deck 的 CPU 是 AMD 的 Zen 2 架构，GPU 是 RDNA 2 架构。这两个�
 
 开机登录自己的 Steam 账号，然后打开 Steam，看看 Steam 是否能够正常运行。
 
-SteamOS 基于 Arch Linux，所以无法连接清华大学校园网 `Tsinghua-Secure`。如果要在清华大学寝室使用 Steam Deck，请自己安装宽带或者忽悠你的室友安装宽带。
+SteamOS 基于 Arch Linux，但软件包源是独立的，里面的 `networkmanager` 并没有更新到最新版本。如果强制更换网络管理器会导致 Steam Deck 的游戏模式出现问题。所以无法连接清华大学校园网 `Tsinghua-Secure`。如果要在清华大学寝室使用 Steam Deck，请自己安装宽带或者忽悠你的室友安装宽带。
 
 ## 更换硬盘
 
@@ -61,7 +59,7 @@ Steam Deck 的存储空间是可以扩展的，它有一个 microSD 卡槽。但
 
     ![steamdeck_ssd_9](../../assets/images/steamdeck_ssd_9.jpg)
 
-    把所有东西装回去。
+    反向执行上述步骤，直到把所有零部件装回去。
 
 更换完 SSD 后，需要重新安装 SteamOS。遵循 [Steam Deck 恢复指示说明](https://help.steampowered.com/zh-cn/faqs/view/1B71-EDF2-EB6D-2BB3) 安装即可。
 
