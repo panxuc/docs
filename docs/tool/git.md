@@ -397,6 +397,52 @@ git push origin --tags
 git push origin :refs/tags/<标签名>
 ```
 
+## 添加子仓库
+
+如果想要将一个仓库作为另一个仓库的子仓库，可以使用 `git submodule` 或者 `git subtree` 命令。个人认为 `git subtree` 命令更好用一些。因为 `git submodule` 命令会在父仓库中创建一个 `.gitmodules` 文件，而 `git subtree` 命令不会，它几乎是透明的。
+
+### 添加子仓库
+
+使用 `git subtree add --prefix=<子仓库目录> <子仓库地址> <子仓库分支>` 命令可以将一个仓库作为另一个仓库的子仓库。
+
+```bash
+git subtree add --prefix=<子仓库目录> <子仓库地址> <子仓库分支>
+```
+
+本仓库就在 [`/docs/coursework/daa`](../coursework/daa/README.md) 目录下添加了子仓库 [`Panxuc/DataAndAlgorithm-Homework`](https://github.com/Panxuc/DataAndAlgorithm-Homework.git)。故而，可以使用以下命令将其添加为子仓库。
+
+```bash
+git subtree add --prefix=docs/coursework/daa https://github.com/Panxuc/DataAndAlgorithm-Homework.git main
+```
+
+### 更新子仓库
+
+使用 `git subtree pull --prefix=<子仓库目录> <子仓库地址> <子仓库分支>` 命令可以更新子仓库。
+
+```bash
+git subtree pull --prefix=<子仓库目录> <子仓库地址> <子仓库分支>
+```
+
+在本仓库中，每当仓库 [`Panxuc/DataAndAlgorithm-Homework`](https://github.com/Panxuc/DataAndAlgorithm-Homework.git) 更新时，可以使用以下命令更新子仓库。
+
+```bash
+git subtree pull --prefix=docs/coursework/daa https://github.com/Panxuc/DataAndAlgorithm-Homework.git main
+```
+
+### 推送子仓库
+
+使用 `git subtree push --prefix=<子仓库目录> <子仓库地址> <子仓库分支>` 命令可以推送子仓库。
+
+```bash
+git subtree push --prefix=<子仓库目录> <子仓库地址> <子仓库分支>
+```
+
+在本仓库中，如果对 `/docs/coursework/daa` 目录下的文件进行了修改，可以使用以下命令推送子仓库。
+
+```bash
+git subtree push --prefix=docs/coursework/daa https://github.com/Panxuc/DataAndAlgorithm-Homework.git main
+```
+
 ## 图形化界面
 
 虽然 Git 自带了命令行工具，但是处于方便使用的考虑，我们可以使用图形化界面来管理版本库。

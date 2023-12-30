@@ -244,8 +244,9 @@ nav:
   - 编程:
       - code/index.md
       - code/regex.md
-      - Python:
-          - code/python/matplotlib.md
+      - C# & .NET:
+          - code/csharp/index.md
+          - code/csharp/lambda.md
   - 系统:
       - os/index.md
       - Windows:
@@ -254,17 +255,20 @@ nav:
           - os/linux/archlinux.md
           - os/linux/steamos.md
       - os/android.md
-  - 软件:
-      - software/index.md
-      - software/git.md
-      - software/vim.md
-      - software/platformio.md
+  - 硬件:
+      - hardware/index.md
+  - 工具:
+      - tool/index.md
+      - tool/git.md
+      - tool/vim.md
+      - tool/platformio.md
   - 游戏:
       - game/index.md
       - game/mahjong.md
       - game/aceattorney.md
       - game/persona.md
       - Galgame:
+          - game/galgame/index.md
           - game/galgame/yuzusoft.md
   - 关于:
       - about/index.md

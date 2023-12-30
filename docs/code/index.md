@@ -5,8 +5,7 @@
     - STL
     - :simple-gnu: GCC
     - :simple-cmake: CMake
-- :simple-csharp: C#
-    - :simple-dotnet: .NET
+- [:simple-csharp: C# & .NET](csharp/index.md)
     - :simple-nuget: NuGet
     - :simple-xaml: WPF
     - :simple-xaml: MAUI
@@ -15,7 +14,8 @@
 - Matlab
 - :fontawesome-brands-python: Python
     - :simple-flask: Flask
-    - [Matplotlib](python/matplotlib.md)
+    - Matplotlib
     - :simple-numpy: NumPy
     - :simple-pandas: Pandas
     - :simple-scipy: SciPy
+    - :simple-sympy: SymPy
