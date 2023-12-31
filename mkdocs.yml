@@ -85,6 +85,7 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
+      slugify: !!python/name:pymdownx.slugs.uslugify
   - pymdownx.arithmatex:
       generic: true
   # - pymdownx.betterem:
@@ -126,9 +127,6 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
       combine_header_slug: true
-      slugify: !!python/object/apply:pymdownx.slugs.slugify
-        kwds:
-          case: lower
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
@@ -244,6 +242,11 @@ nav:
   - 建站:
       - site/index.md
       - site/docker.md
+      - 域名:
+          - site/domain/index.md
+          - site/domain/dns.md
+          - 应用:
+              - site/domain/app/email.md
   - 编程:
       - code/index.md
       - code/regex.md
