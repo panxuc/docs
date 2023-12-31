@@ -6,9 +6,9 @@ C# 是微软推出的一种基于 .NET 的、由 C 和 C++ 派生出来的、面
 
 ## .NET
 
-C# 程序在 .NET 上运行，.NET 是名为公共语言运行时 (CLR，Common Language Runtime) 的虚执行系统和一组类库。
+C# 程序在 .NET 上运行，.NET 是名为“公共语言运行时 (CLR，Common Language Runtime) ”的虚执行系统和一组类库。
 
-在生成一个 .NET 程序时，程序员编写的代码暂时不翻译成本地的机器语言，而是先被编译成符合 CLI 规范的中间语言 (IL)。在执行可执行文件时，将启动对应 .NET 框架的“公共语言运行时（CLR, Common Language Runtime）”，由该 CLR 将 MSIL 编译为机器码执行，称作 JIT 编译（just-in-time compilation）。
+在生成一个 .NET 程序时，程序员编写的代码暂时不翻译成本地的机器语言，而是先被编译成符合 CLI 规范的中间语言 (IL)。在执行可执行文件时，将启动对应 .NET 框架的“公共语言运行时”，由该 CLR 将 MSIL 编译为机器码执行，称作 JIT 编译（just-in-time compilation）。
 
 .NET 版本中，奇数版本号表示 STS 版本，支持期限为 18 个月；偶数版本号表示 LTS 版本，支持期限为 3 年。当前最新的 LTS 版本是 .NET 8。
 

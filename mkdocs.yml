@@ -227,7 +227,9 @@ nav:
           - doc/markdown/index.md
           - doc/markdown/basic.md
           - doc/markdown/mkdocsmaterial.md
-      - doc/typst.md
+      - Typst:
+          - doc/typst/index.md
+          - doc/typst/basic.md
       - LaTeX:
           - doc/latex/index.md
           - doc/latex/basic.md
@@ -241,6 +243,7 @@ nav:
           - web/html/input.md
   - 建站:
       - site/index.md
+      - site/docker.md
   - 编程:
       - code/index.md
       - code/regex.md

@@ -226,11 +226,10 @@ reboot
 > 参见[清华大学开源软件镜像站 Arch Linux CN 软件仓库镜像使用帮助](https://mirrors.tuna.tsinghua.edu.cn/help/archlinuxcn/)。
 
 
-``` diff title="/etc/pacman.conf"
+``` bash title="/etc/pacman.conf"
 [archlinuxcn]
-- SigLevel = Optional TrustedOnly
-+ SigLevel = Optional TrustAll # (1)!
-+ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+SigLevel = Optional TrustAll # (1)!
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
 ```
 
 1.  如果安装 `archlinuxcn-keyring` 时不会报错，可以不加。

@@ -515,7 +515,7 @@ x^2, x_2
 
 ## 希腊字母
 
-在 $\LaTeX$ 中，希腊字母是用 `\` 加上字母的小写或者大写形式表示的，比如 `\alpha` 或者 `\Alpha`。有的希腊字母有多种形式，比如 `\epsilon` 和 `\varepsilon`，`\phi` 和 `\varphi`，`\rho` 和 `\varrho`。
+在 $\LaTeX$ 中，希腊字母是用 `\` 加上字母的小写或者大写形式表示的，比如 `\delta` 或者 `\Delta`。有的希腊字母有多种形式，比如 `\epsilon` 和 `\varepsilon`，`\phi` 和 `\varphi`。
 
 | LaTeX         | $\LaTeX$      | LaTeX       | $\LaTeX$    | LaTeX     | $\LaTeX$  |
 | ------------- | ------------- | ----------- | ----------- | --------- | --------- |
