@@ -221,6 +221,9 @@ nav:
               - 答案: coursework/daa/ans/2023209.md
   - 文档:
       - doc/index.md
+      - 格式:
+          - doc/style/index.md
+          - doc/style/glyph.md
       - Markdown:
           - doc/markdown/index.md
           - doc/markdown/basic.md
