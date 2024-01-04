@@ -38,9 +38,9 @@
 在 Unicode 中，有许多字符，为了节省码位被合并在一起，但是这事实上是不太恰当的。这些字符在不同的语言中应当被写作不同的样式。下面我们来看几个例子。
 
 <div style="text-align: center; font-size: 4em; line-height: 1em;">
-<p><span lang="zh_CN">曜</span> <span lang="zh_TW">曜</span> <span lang="zh_HK">曜</span> <span lang="ja">曜</span> <span lang="ko">曜</span></p>
-<p><span lang="zh_CN">骨</span> <span lang="zh_TW">骨</span> <span lang="zh_HK">骨</span> <span lang="ja">骨</span> <span lang="ko">骨</span></p>
-<p><span lang="zh_CN">次</span> <span lang="zh_TW">次</span> <span lang="zh_HK">次</span> <span lang="ja">次</span> <span lang="ko">次</span></p>
+<p><span lang="zh_CN">曜</span><span lang="zh_TW">曜</span><span lang="zh_HK">曜</span><span lang="ja">曜</span><span lang="ko">曜</span></p>
+<p><span lang="zh_CN">骨</span><span lang="zh_TW">骨</span><span lang="zh_HK">骨</span><span lang="ja">骨</span><span lang="ko">骨</span></p>
+<p><span lang="zh_CN">次</span><span lang="zh_TW">次</span><span lang="zh_HK">次</span><span lang="ja">次</span><span lang="ko">次</span></p>
 </div>
 
 ??? note "看不出来？点我！"
