@@ -33,3 +33,19 @@ Windows 11 默认使用 GBK 编码，这是陈旧而不合理的。现在大多�
 ![将编码改为 UTF-8](../../assets/images/windows_utf8.png)
 
 值得注意的是，在中文环境下运行的 Windows 的 C 和 C++ 程序使用 `printf()` 输出是与源代码编码相同的，但是 `scanf()` 输入是 GBK 编码。这是因为 Windows 的 C 和 C++ 程序使用的是 Windows API，而 Windows API 使用的是 GBK 编码。所以，如果你想在 Windows 下使用 C 和 C++ 编程，可以使用 GBK 编码或者在 WSL 中编译运行。
+
+### 使用 Windows 10 样式的右键菜单
+
+Windows 11 的右键菜单使用了新的样式，这样的样式不仅不美观，而且不好用。我们可以使用 Windows 10 样式的右键菜单。只需修改注册表即可。
+
+以管理员身份运行终端，然后输入
+
+``` powershell
+reg add "HKCU\Software\Classes\CLSID\{86ca1aa0-34aa-4e8b-a509-50c905bae2a2}\InprocServer32" /f /ve
+```
+
+然后重启文件资源管理器即可。
+
+``` powershell
+taskkill /f /im explorer.exe & start explorer.exe
+```

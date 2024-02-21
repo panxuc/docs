@@ -151,3 +151,29 @@ Point p = new Point();
 ```csharp
 Point p = new Point { x = 1, y = 2 };
 ```
+
+### 引用类型
+
+引用类型的变量包含指向类型的引用，而不是类型的实例。
+
+对象类型、动态类型、字符串类型、数组类型与 C/C++ 中的对应类型基本相同，不再赘述。
+
+#### 类
+
+类是一种引用类型，它是一组不同类型的变量和方法的集合。类的声明如下：
+
+```csharp
+class Person
+{
+    public string name;
+    public int age;
+}
+```
+
+#### 委托
+
+委托是一种引用类型，它是一种引用方法的类型。委托的声明如下：
+
+```csharp
+delegate void MyDelegate(string message);
+```
