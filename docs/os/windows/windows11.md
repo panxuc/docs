@@ -20,6 +20,12 @@ Windows 11 是微软公司开发的操作系统。它是 Windows 10 的继任者
 taskkill /f /im OOBENetworkConnectionFlow.exe
 ```
 
+或者
+
+``` powershell
+oobe\bypassnro
+```
+
 来跳过联网。
 
 ## 使用 Windows 11

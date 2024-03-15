@@ -304,6 +304,16 @@ archinstall
 
 ## 使用 Arch Linux
 
+### Pacman
+
+Pacman 是 Arch Linux 的包管理器，可以方便地安装、更新和删除软件包。
+
+``` bash
+pacman -Syu # 更新软件包
+pacman -S <软件包> # 安装软件包
+pacman -R <软件包> # 删除软件包
+```
+
 ### 输入法
 
 [Fcitx5](https://archlinux.org/packages/extra/x86_64/fcitx5/) 是一款优秀的输入法框架，可以在 Arch Linux 上使用。
